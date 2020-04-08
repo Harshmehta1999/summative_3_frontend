@@ -20,7 +20,7 @@ export default class AddArtwork extends Component {
     e.preventDefault();
 
     var formData = new FormData(this.formRef.current);
-    // formData.append("cat_id",Date.now())
+    // formData.append("_id",Date.now())
 
     Axios.post(UTILS.add_artwork, formData).then(res => {
       console.log(res);
