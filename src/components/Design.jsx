@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import GlobalNav from './GlobalNav'
 import Axios from "axios";
 import * as UTILS from "../utils";
+import { navigate } from "@reach/router";
+import DesignButton from "./DesignButton";
 
 
 export default class Design extends Component {
@@ -11,6 +13,15 @@ export default class Design extends Component {
         this.state = { design:[] };
         
       }
+
+      // getDesignInfo = e => {
+      //   navigate(`/IndividualArtwork/${this.props.id}`)
+     
+
+        
+        
+    
+      // };
 
       componentDidMount(){
         Axios.get(UTILS.category_design_url).then(
@@ -31,8 +42,15 @@ export default class Design extends Component {
         return (
             <React.Fragment>
                 <GlobalNav />
+
                     {this.state.design.map((design, i) => {
-      return <h2> key={i} design price= {design.price}<br></br></h2>
+      return  <li key={design.price}>
+      <DesignButton design_title={design.artwork_title} id={design.id} />
+    </li> 
+      // <div  onClick={this.getDesignInfo}>
+      //   <h2> design price= {design.price}<br></br></h2>
+      //   </div>
+     
   
 
     })}

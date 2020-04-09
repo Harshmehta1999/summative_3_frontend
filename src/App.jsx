@@ -8,6 +8,7 @@ import GlobalNav from "./components/GlobalNav";
 import { Router } from "@reach/router";
 import Design from "./components/Design";
 import Home from "./components/Home"
+import IndividualArtwork from "./components/IndividualArtwork";
 
 
 
@@ -36,6 +37,7 @@ export default class App extends React.Component {
  <Router>
  <Home path="/" />
           <Design path="/designers" />
+          <IndividualArtwork path="/IndividualArtwork/:id" />
        
           
 
