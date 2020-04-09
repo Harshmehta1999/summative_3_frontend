@@ -46,18 +46,8 @@ export default class Home extends React.Component {
     <GlobalNav />
 <AddArtwork />
 
-       {/* {this.state.categories.map((category, i) => {
-      console.log(this.state.categories)
-      return <h2> key={i} designers first_name= {category.category_title}<br></br></h2>
-  
-
-    })} */}
  
-
-    
-
-  
-      </React.Fragment>
+</React.Fragment>
     );
   }
 }

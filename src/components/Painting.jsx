@@ -3,14 +3,14 @@ import GlobalNav from './GlobalNav'
 import Axios from "axios";
 import * as UTILS from "../utils";
 import { navigate } from "@reach/router";
-import DesignButton from "./DesignButton";
+import PaintingButton from "./PaintingButton";
 
 
-export default class Design extends Component {
+export default class Painting extends Component {
     constructor(props) {
         super(props);
         
-        this.state = { design:[] };
+        this.state = { painting:[] };
         
       }
 
@@ -24,13 +24,13 @@ export default class Design extends Component {
       // };
 
       componentDidMount(){
-        Axios.get(UTILS.category_design_url).then(
+        Axios.get(UTILS.category_painting_url).then(
           res => {
             if (res.data.result === false) {
               this.setState({ result: false });
             } else {
               console.table(res.data)
-              this.setState({design: res.data, result: true });
+              this.setState({painting: res.data, result: true });
             }
           },
      
@@ -43,9 +43,9 @@ export default class Design extends Component {
             <React.Fragment>
                 <GlobalNav />
 
-                    {this.state.design.map((design, i) => {
-      return  <li key={design.price}>
-      <DesignButton design_title={design.artwork_title} id={design.id} />
+                    {this.state.painting.map((painting, i) => {
+      return  <li key={painting.price}>
+      <PaintingButton painting_title={painting.artwork_title} id={painting.id} />
     </li> 
 
   

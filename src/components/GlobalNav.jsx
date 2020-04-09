@@ -26,11 +26,28 @@ export default class GlobalNav extends Component {
             </Link>
           </li>
           <li>
-            <Link style={LinkStyle} to="/designers">
+            <Link style={LinkStyle} to="/designs">
               Designs
             </Link>
           </li>
 
+          <li>
+            <Link style={LinkStyle} to="/illustrations">
+              Illustrations
+            </Link>
+          </li>
+
+          <li>
+            <Link style={LinkStyle} to="/photographs">
+              Photographs
+            </Link>
+          </li>
+
+          <li>
+            <Link style={LinkStyle} to="/paintings">
+              Paintings
+            </Link>
+          </li>
           {/* <li>
             <Link style={LinkStyle} to="/add-writer">
              Add writer

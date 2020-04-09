@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios"
 import { navigate } from "@reach/router";
+import GlobalNav from "../components/GlobalNav"
 
 
 export default class IndividualArtwork extends Component {
@@ -26,6 +27,7 @@ export default class IndividualArtwork extends Component {
     return (
 
         <div>
+           <GlobalNav />
 
           <h2>hello</h2>
      
