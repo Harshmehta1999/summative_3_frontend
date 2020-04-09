@@ -27,7 +27,7 @@ export default class IndividualArtwork extends Component {
 
         <div>
 
-          <h2>hello</h2>
+          <h2>helloss</h2>
      
               {this.state.artworks.map((artwork, i) => {
                 
