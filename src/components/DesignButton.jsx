@@ -12,7 +12,7 @@ export default class DesignButton extends Component {
   }
 
   getDesignInfo = e => {
-    navigate(`/IndividualArtwork/${this.props._id}`)
+    navigate(`/IndividualArtwork/${this.props.id}`)
     
     
 

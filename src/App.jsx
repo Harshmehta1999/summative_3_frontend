@@ -37,7 +37,7 @@ export default class App extends React.Component {
  <Router>
  <Home path="/" />
           <Design path="/designers" />
-          {/* <IndividualArtwork path="/IndividualArtwork/:id" /> */}
+          <IndividualArtwork path="/IndividualArtwork/:id" />
        
           
 

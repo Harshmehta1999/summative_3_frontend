@@ -3,7 +3,7 @@ import Axios from "axios";
 import { navigate } from "@reach/router";
 
 
-export default class IndividualBookInfo extends Component {
+export default class IndividualArtwork extends Component {
   constructor(props) {
     super(props);
 
@@ -11,7 +11,7 @@ export default class IndividualBookInfo extends Component {
   }
 
   componentDidMount() {
-    Axios.get(`http://localhost:9000/api/artworks/_id`).then(
+    Axios.get(`http://localhost:9000/api/artworks/${this.props.id}`).then(
       res => {
         console.log(res.data);
         this.setState({ artworks: res.data });
@@ -29,12 +29,12 @@ export default class IndividualBookInfo extends Component {
 
           <h2>hello</h2>
      
-             {/* {this.state.artworks.map((artworks, i) => {
-              
-            return <h2>  hshBook Title = {artworks.artwork_title}<br></br>artworks Pages = {artworks.price}<br></br>artworks Isbn = {artworks.isbn}<br></br></h2>
-        
+              {this.state.artworks.map((artwork, i) => {
+                
+              return <h2>  artwork Title = {artwork.artwork_title}<br></br>artwork subtitle = {artwork.artwork_subtitle}<br></br>artworks price = {artwork.price}<br></br></h2>
+          
 
-          })} */}
+            })}
 
           
 
