@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
+import SubNav from "./SubNav"
 
 export default class CategorySelector extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ export default class CategorySelector extends Component {
   render() {
     return (
       <React.Fragment>
-        
+        <SubNav />
         <h1>Select category</h1>
         <div>
           <select id="lang" onChange={this.props.onCategoryUpdated}>

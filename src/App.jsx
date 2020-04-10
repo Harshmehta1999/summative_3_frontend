@@ -4,7 +4,6 @@ import * as UTILS from "../src/utils";
 import Axios from "axios";
 import AddArtwork from "./components/AddArtwork";
 import CategorySelector from "./components/CategorySelector";
-import GlobalNav from "./components/GlobalNav";
 import { Router } from "@reach/router";
 import Design from "./components/Design";
 import Home from "./components/Home"
@@ -12,7 +11,10 @@ import Illustration from "./components/Illustration"
 import IndividualArtwork from "./components/IndividualArtwork";
 import Photography from "./components/Photography";
 import Painting from "./components/Painting";
-
+import SubNav from "./components/SubNav";
+import Menu from "./components/Menu";
+import TopNav from "./components/TopNav";
+import Account from "./components/Account";
 
 
 
@@ -45,6 +47,12 @@ export default class App extends React.Component {
           <Photography path="/photographs" />
           <Painting path="/paintings" />
           <IndividualArtwork path="/IndividualArtwork/:id" />
+          <SubNav path="/subnav" />
+          <Menu path="/menu" />
+          <Account path="/account"/>
+
+
+          <TopNav path="/header" />
        
           
 

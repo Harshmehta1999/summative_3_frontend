@@ -1,0 +1,24 @@
+.top-nav {
+
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid #CECECE;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+
+}
+
+.arrow-top {
+    width: 50px;
+    padding: 10px;
+}
+
+
+.search-top {
+    width: 50px;
+    padding: 10px;
+
+}
+

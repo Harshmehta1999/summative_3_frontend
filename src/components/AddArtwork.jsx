@@ -3,6 +3,7 @@ import { Button } from "reactstrap";
 import Axios from "axios";
 import * as UTILS from "../utils";
 import CategorySelector from "./CategorySelector";
+import SubNav from './SubNav'
 
 export default class AddArtwork extends Component {
   constructor(props) {
@@ -28,6 +29,8 @@ export default class AddArtwork extends Component {
   };
   render() {
     return (
+<React.Fragment>
+<SubNav />
       <div className="form-wrapper">
         <form onSubmit={this.AddArtwork} ref={this.formRef}>
           
@@ -45,9 +48,12 @@ export default class AddArtwork extends Component {
 
           
           <Button type="submit">Submit</Button>
+
+          
           
         </form>
       </div>
+      </React.Fragment>
     );
   }
 }

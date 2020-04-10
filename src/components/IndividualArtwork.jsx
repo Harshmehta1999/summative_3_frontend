@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios"
 import { navigate } from "@reach/router";
-import GlobalNav from "../components/GlobalNav"
+import SubNav from "./SubNav"
 
 
 export default class IndividualArtwork extends Component {
@@ -27,13 +27,15 @@ export default class IndividualArtwork extends Component {
     return (
 
         <div>
-           <GlobalNav />
-
+           <SubNav />
           <h2>hello</h2>
      
               {this.state.artworks.map((artwork, i) => {
                 
-              return <h2>  artwork Title = {artwork.artwork_title}<br></br>artwork subtitle = {artwork.artwork_subtitle}<br></br>artworks price = {artwork.price}<br></br></h2>
+              return <h2>  
+                artwork Title = {artwork.artwork_title}<br>
+              </br>artwork subtitle = {artwork.artwork_subtitle}<br>
+              </br>artworks price = {artwork.price}<br></br></h2>
           
 
             })}

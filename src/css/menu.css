@@ -1,0 +1,36 @@
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.bttn {    
+    width: 100vw;
+    padding: 70px;
+    margin-bottom: 20px;
+
+    letter-spacing: 0.1rem;
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 1rem;
+    ;
+}
+
+.design {
+    background-image: url(../images/design_back.jpg);
+}
+
+
+.illustration {
+    background-image: url(../images/illustration_back.jpg);
+}
+
+.paintings {
+    background-image: url(../images/painting_back.jpg);
+}
+
+.photography {
+    background-image: url(../images/photography_back.jpg);
+}
+
