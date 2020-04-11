@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-import { navigate } from "@reach/router";
+// import { navigate } from "@reach/router";
 import IllustrationButton from "../buttons/IllustrationButton.jsx";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav"
@@ -36,7 +36,7 @@ export default class Illustration extends Component {
         <TopNav />
         <SubNav />
 
-        <h3>ILLUSTRATION</h3>
+        <span>ILLUSTRATION</span>
 
         {this.state.illustration.map((illustration, i) => {
           return (

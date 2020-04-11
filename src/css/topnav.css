@@ -1,24 +1,34 @@
 .top-nav {
-
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    border-bottom: 1px solid #CECECE;
-    width: 100vw;
-    position: sticky;
-    top: 0;
-
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid #cecece;
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .arrow-top {
-    width: 50px;
-    padding: 10px;
+  width: 60px;
+  padding: 10px;
 }
 
+
+
+span {
+  color: #555555;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+}
 
 .search-top {
-    width: 50px;
-    padding: 10px;
-
+  width: 60px;
+  padding: 10px;
 }
-

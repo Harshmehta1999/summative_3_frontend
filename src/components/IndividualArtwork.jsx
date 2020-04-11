@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Axios from "axios"
-import { navigate } from "@reach/router";
-import SubNav from "./SubNav"
-
+import Axios from "axios";
+// import { navigate } from "@reach/router";
+import SubNav from "./SubNav";
+import TopNav from "./TopNav";
 
 export default class IndividualArtwork extends Component {
   constructor(props) {
@@ -25,25 +25,25 @@ export default class IndividualArtwork extends Component {
 
   render() {
     return (
+      <React.Fragment>
+      <TopNav />
+      <SubNav />
+      <div>
+        <h2>hello</h2>
 
-        <div>
-           <SubNav />
-          <h2>hello</h2>
-     
-              {this.state.artworks.map((artwork, i) => {
-                
-              return <h2>  
-                artwork Title = {artwork.artwork_title}<br>
-              </br>artwork subtitle = {artwork.artwork_subtitle}<br>
-              </br>artworks price = {artwork.price}<br></br></h2>
-          
-
-            })}
-
-          
-
-        </div>
-      
+        {this.state.artworks.map((artwork, i) => {
+          return (
+            <h2>
+              {" "}
+              artwork Title = {artwork.artwork_title}
+              <br></br>artwork subtitle = {artwork.artwork_subtitle}
+              <br></br>artworks price = {artwork.price}
+              <br></br>
+            </h2>
+          );
+        })}
+      </div>
+      </React.Fragment>
     );
   }
 }

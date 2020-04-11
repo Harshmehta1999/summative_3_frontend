@@ -1,7 +1,7 @@
 import * as React from "react";
 import "../App.css";
 
-import { navigate } from "@reach/router";
+// import { navigate } from "@reach/router";
 import * as UTILS from "../utils";
 import Axios from "axios";
 

@@ -1,6 +1,6 @@
 
 .icon {
-    width: 50px;
+    width: 60px;
     padding: 10px;
 }
 
@@ -13,4 +13,5 @@
     width: 100vw;
     position: fixed;
     bottom: 0;
+    z-index: 1;
 }

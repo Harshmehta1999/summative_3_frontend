@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-import { navigate } from "@reach/router";
+// import { navigate } from "@reach/router";
 import PaintingButton from "../buttons/PaintingButton";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
@@ -35,7 +35,7 @@ export default class Painting extends Component {
         <TopNav />
         <SubNav />
 
-        <h3>PAINTING</h3>
+        <span>PAINTINGS</span>
 
         {this.state.painting.map((painting, i) => {
           return (

@@ -4,6 +4,7 @@ import Axios from "axios";
 import * as UTILS from "../utils";
 import CategorySelector from "./CategorySelector";
 import SubNav from './SubNav'
+import '../css/addartwork.css'
 
 export default class AddArtwork extends Component {
   constructor(props) {
@@ -31,28 +32,34 @@ export default class AddArtwork extends Component {
     return (
 <React.Fragment>
 <SubNav />
-      <div className="form-wrapper">
+      
+
+
+<div className="form-wrapper">
         <form onSubmit={this.AddArtwork} ref={this.formRef}>
           
           <CategorySelector onCategoryUpdated={this.onCategoryUpdated} />
-          <label>Artwork Title</label>
-          <input type="text" name="artwork_title" placeholder="title" />
 
-          <label>Artwork Subtitle</label>
-          <input type="text" name="artwork_subtitle" placeholder="subtitle" />
+          {/* <label>ARTWORK TITLE</label> */}
+          <input type="text" name="artwork_title" placeholder="Title" />
+{/* 
+          <label>Artwork Subtitle</label> */}
+          <input type="text" name="artwork_subtitle" placeholder="Subtitle" />
+{/* 
+          <label>Price</label> */}
+          <input type="text" name="price" placeholder="Price" />
 
-          <label>Price</label>
-          <input type="text" name="price" placeholder="price" />
+          <textarea type="textarea" name="product-description" placeholder="Product Description" rows="5" />
 
           <input type="hidden" name="cat_id" value={this.state.cat_id} />
 
-          
-          <Button type="submit">Submit</Button>
-
+          <div className="submit">
+          <Button className="submit-bttn" type="submit">LIST ITEM</Button>
+          </div>
           
           
         </form>
-      </div>
+</div>
       </React.Fragment>
     );
   }

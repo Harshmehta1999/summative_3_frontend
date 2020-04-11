@@ -28,7 +28,7 @@ export default class Menu extends Component {
       <React.Fragment>
         <TopNav />
         <SubNav />
-
+<span>CATEGORIES</span>
         <div className="menu-nav">
             <button onClick={this.goDesigns} className="design bttn">DESIGN</button>
             <button onClick={this.goIllustration} className="illustration bttn">ILLUSTRATION</button>

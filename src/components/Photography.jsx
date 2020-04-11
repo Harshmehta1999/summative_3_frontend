@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-import { navigate } from "@reach/router";
+// import { navigate } from "@reach/router";
 import PhotographyButton from "../buttons/PhotographyButton";
 
 import TopNav from "./TopNav";
@@ -36,7 +36,7 @@ export default class Photography extends Component {
         <TopNav />
         <SubNav />
 
-        <h3>PHOTOGRAPHY</h3>
+        <span>PHOTOGRAPHY</span>
 
         {this.state.photography.map((photography, i) => {
           return (

@@ -7,14 +7,14 @@
 
 .bttn {    
     width: 100vw;
-    padding: 70px;
-    margin-bottom: 20px;
-
-    letter-spacing: 0.1rem;
+    padding: 65px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    letter-spacing: 0.01rem;
     color: white;
-    text-shadow: 1px 1px black;
+    text-shadow: 1.5px 1.5px black;
     font-size: 1rem;
-    ;
+    border: none;
 }
 
 .design {
