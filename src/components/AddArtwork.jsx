@@ -3,14 +3,20 @@ import { Button } from "reactstrap";
 import Axios from "axios";
 import * as UTILS from "../utils";
 import CategorySelector from "./CategorySelector";
+import ImageUpload from "./ImageUpload";
+
 
 export default class AddArtwork extends Component {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
-    this.state = { categories: [], selected_id: null };
+    this.state = { categories: [], selected_id: null};
     
   }
+
+
+
+
 
   onCategoryUpdated = e => {
     this.setState({ cat_id: e.target.value });
@@ -20,9 +26,9 @@ export default class AddArtwork extends Component {
     e.preventDefault();
 
     var formData = new FormData(this.formRef.current);
-    // formData.append("_id",Date.now())
-
-    Axios.post(UTILS.add_artwork, formData).then(res => {
+ 
+    Axios.post("http://localhost:9000/api/artworks", formData).then(res => {
+      // alert("The file is successfully uploaded");
       console.log(res);
     });
   };
@@ -43,10 +49,13 @@ export default class AddArtwork extends Component {
 
           <input type="hidden" name="cat_id" value={this.state.cat_id} />
 
-          
+
+
+        
           <Button type="submit">Submit</Button>
           
         </form>
+          {/* <ImageUpload /> */}
       </div>
     );
   }
