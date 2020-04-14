@@ -28,10 +28,10 @@ export default class CategorySelector extends Component {
         <h1>Select category</h1>
         <div>
           <select id="lang" onChange={this.props.onCategoryUpdated}>
-            {this.state.categories.map((writer, i) => {
-              let fullname = `${writer.category_title} ${writer.cat_id}`;
+            {this.state.categories.map((category, i) => {
+              let fullname = `${category.category_title} ${category.cat_id}`;
               return (
-                <option key={i} value={writer.cat_id} >
+                <option key={i} value={category.cat_id} >
                  
                   {fullname}
                   

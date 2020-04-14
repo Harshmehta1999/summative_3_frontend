@@ -12,6 +12,10 @@ import Illustration from "./components/Illustration"
 import IndividualArtwork from "./components/IndividualArtwork";
 import Photography from "./components/Photography";
 import Painting from "./components/Painting";
+import LoginSignup from "./components/LoginSignup";
+import SignupPage from "./components/SignupPage";
+import Profile from "./components/Profile";
+import EditUserProfile from "./components/EditUserProfile";
 
 
 
@@ -45,6 +49,10 @@ export default class App extends React.Component {
           <Photography path="/photographs" />
           <Painting path="/paintings" />
           <IndividualArtwork path="/IndividualArtwork/:id" />
+          <LoginSignup path="/loginpage" />
+          <SignupPage path="/signuppage"/>
+          <Profile path="/profile-page"/>
+          <EditUserProfile path="/edit-userprofile-page"/>
        
           
 
