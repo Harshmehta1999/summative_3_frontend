@@ -35,7 +35,7 @@ export default class AddArtwork extends Component {
     });
     };
     
-    uploadToExpress = (e) => {
+    uploadToServer = (e) => {
     e.preventDefault();
     // grab reference to the form data
     var formData = new FormData(this.formRef.current);
@@ -85,7 +85,7 @@ export default class AddArtwork extends Component {
 
           <div className="uploadimg-con">
          
-         <input type="file" name="image" onChange={this.uploadToExpress} className="upload-img"></input>
+         <input type="file" name="image" onChange={this.uploadToServer} className="upload-img"></input>
        </div>
 
        <button className="btn btn-primary btn-wide">Add Item</button>
