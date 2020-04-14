@@ -14,9 +14,7 @@
   padding: 10px;
 }
 
-
-
-span {
+span, h3 {
   color: #555555;
   letter-spacing: 0.1rem;
   font-size: 1rem;
@@ -28,7 +26,8 @@ span {
   top: 20px;
 }
 
-.search-top {
+
+.search-bar {
   width: 60px;
   padding: 10px;
 }

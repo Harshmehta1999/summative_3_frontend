@@ -3,34 +3,21 @@ import React, { Component } from "react";
 import { navigate } from "@reach/router";
 
 export default class DesignButton extends Component {
-
   constructor(props) {
     super(props);
 
-    console.table(this.props)
-    
+    console.table(this.props);
   }
 
   getIllustrationInfo = e => {
-    navigate(`/IndividualArtwork/${this.props.id}`)
-    
-    
-
+    navigate(`/IndividualArtwork/${this.props.id}`);
   };
 
-  // render(){
-  //   return(
-  //   <h2>{this.props.bookTitle}</h2>
-    
-   
-  //   )
-  // }
-
-
   render() {
-    return <button onClick={this.getIllustrationInfo}>{this.props.illustration_title}</button>;
-
-
-    
+    return (
+      <button onClick={this.getIllustrationInfo}>
+        {this.props.illustration_title}
+      </button>
+    );
   }
 }

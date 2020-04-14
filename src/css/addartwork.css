@@ -3,11 +3,6 @@
     padding: 0;
 }
 
-.form-wrapper {
-    /* margin: 10px; */
-    /* display: flex;
-    justify-content: center; */
-}
 
 input, select, textarea {
     border: 1px solid #D1C7C7;
@@ -20,7 +15,7 @@ input, select, textarea {
     margin-bottom: 10px;
 }
 
-.submit-bttn {
+.submit-bttn, .submit-button {
     width: 50%;
     padding: 10px;
     background-color: #5CC7F7;
@@ -36,3 +31,10 @@ input, select, textarea {
     margin-top: 20px;
 }
 
+form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

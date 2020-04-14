@@ -1,0 +1,36 @@
+.homepage {
+    margin-top: 60%;
+    margin-bottom: 50%;
+}
+
+.button-login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.login-bttn, .signup-bttn {
+    width: 50vw;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #5CC7F7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    font-size: 0.9rem;
+}
+
+.header {
+    letter-spacing: 0.1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.signup-info {
+    margin-top: 40%;
+}

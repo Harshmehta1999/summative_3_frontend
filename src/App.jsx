@@ -2,7 +2,7 @@ import * as React from "react";
 // import { Link } from "@reach/router";
 // import * as UTILS from "../src/utils";
 // import Axios from "axios";
-// import AddArtwork from "./components/AddArtwork";
+import AddArtwork from "./components/AddArtwork";
 // import CategorySelector from "./components/CategorySelector";
 import { Router } from "@reach/router";
 import Design from "./components/Design";
@@ -16,6 +16,11 @@ import Menu from "./components/Menu";
 import TopNav from "./components/TopNav";
 import Account from "./components/Account";
 import LandingPage from "./components/LandingPage";
+import Search from "./components/Search";
+import LoginSignup from "./components/LoginSignup";
+import SignupPage from "./components/SignupPage";
+import Profile from "./components/Profile";
+import EditUserProfile from "./components/EditUserProfile";
 
 export default class App extends React.Component {
 
@@ -32,6 +37,12 @@ export default class App extends React.Component {
           <SubNav path="/subnav" />
           <Menu path="/menu" />
           <Account path="/account" />
+          <LoginSignup path="/loginpage" />
+          <SignupPage path="/signuppage"/>
+          <Profile path="/profile-page"/>
+          <EditUserProfile path="/edit-userprofile-page"/>
+          <AddArtwork path="/addartwork" />
+          <Search path="/search" />
 
           <LandingPage path="/creativecorner" />
           <TopNav path="/header" />

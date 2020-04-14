@@ -1,24 +1,30 @@
 import React, { Component } from "react";
-// import { navigate } from "@reach/router";
-import search from "../images/search.png";
+import { navigate } from "@reach/router";
+import search from "../images/search-bar.png";
 import leftArrow from "../images/left_arrow.png";
 import "../css/topnav.css";
 
 export default class TopNav extends Component {
   componentDidMount() {}
 
+  goSearch = e => {
+    navigate(`/search`);
+  };
 
   render() {
     return (
       <React.Fragment>
         <div className="top-nav">
-
           <img src={leftArrow} alt="search" className="arrow-top" />
-        
-
           <h3></h3>
-        
-          <img src={search}  alt="search" className="search-top" />
+          <div className="search-wrapper">
+            <img
+              src={search}
+              onClick={this.goSearch}
+              alt="search-bar"
+              className="search-bar"
+            />
+          </div>
         </div>
       </React.Fragment>
     );

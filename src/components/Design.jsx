@@ -7,6 +7,9 @@ import SubNav from "./SubNav";
 import TopNav from "./TopNav";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/categories.css";
+import Image from "../images/artist.jpg"
+
+
 export default class Design extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +44,7 @@ export default class Design extends Component {
           return (
             <div className="container">
               <div className="card">
-                {/* <img src="..." class="card-img-top" alt="..."> */}
+                <img src={Image} class="card-img-top" />
                 <div className="card-body">
                   <h6 className="card-title">{design.artwork_title}</h6>
                   <h6 className="card-subtitle">{design.artwork_subtitle}</h6>

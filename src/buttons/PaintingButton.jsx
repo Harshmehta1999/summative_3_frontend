@@ -13,12 +13,6 @@ export default class PaintingButton extends Component {
     navigate(`/IndividualArtwork/${this.props.id}`);
   };
 
-  // render(){
-  //   return(
-  //   <h2>{this.props.bookTitle}</h2>
-
-  //   )
-  // }
 
   render() {
     return (
