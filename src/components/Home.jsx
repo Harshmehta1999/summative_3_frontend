@@ -8,7 +8,6 @@ import Axios from "axios";
 
 import GlobalNav from "./GlobalNav";
 import AddArtwork from "./AddArtwork";
-import ImageUpload from "./ImageUpload";
 import LoginSignup from "./LoginSignup";
 import SignupPage from "./SignupPage";
 
@@ -59,10 +58,6 @@ export default class Home extends React.Component {
 
     <GlobalNav />
 
-<<<<<<< HEAD
- 
-</React.Fragment>
-=======
 
    
 
@@ -72,7 +67,6 @@ export default class Home extends React.Component {
 
   
       </React.Fragment>
->>>>>>> harsh-branch
     );
   }
 }
