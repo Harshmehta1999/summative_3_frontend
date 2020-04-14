@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../App.css";
-
+import { Button } from "reactstrap";
 
 import { navigate } from "@reach/router";
 import * as UTILS from "../utils";
@@ -8,14 +8,27 @@ import Axios from "axios";
 
 import GlobalNav from "./GlobalNav";
 import AddArtwork from "./AddArtwork";
+import ImageUpload from "./ImageUpload";
+import LoginSignup from "./LoginSignup";
+import SignupPage from "./SignupPage";
+
 
 
 
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {categories: [],designers:[]};
+
+    this.state = {selectedFile: null}
+
   }
+
+
+
+
+  
+
+
   componentDidMount(){
     Axios.get(UTILS.categories_url).then(
       res => {
@@ -43,11 +56,23 @@ export default class Home extends React.Component {
   
      <React.Fragment>
 
-    <GlobalNav />
-<AddArtwork />
 
+    <GlobalNav />
+
+<<<<<<< HEAD
  
 </React.Fragment>
+=======
+
+   
+
+<LoginSignup />
+<AddArtwork />
+
+
+  
+      </React.Fragment>
+>>>>>>> harsh-branch
     );
   }
 }
