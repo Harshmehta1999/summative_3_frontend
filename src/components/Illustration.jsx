@@ -5,6 +5,7 @@ import * as UTILS from "../utils";
 import IllustrationButton from "../buttons/IllustrationButton.jsx";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav"
+import Image from "../images/artist.jpg"
 
 
 export default class Illustration extends Component {
@@ -38,16 +39,26 @@ export default class Illustration extends Component {
 
         <span>ILLUSTRATION</span>
 
-        {this.state.illustration.map((illustration, i) => {
-          return (
-            <li key={illustration.price}>
-              <IllustrationButton
-                illustration_title={illustration.artwork_title}
-                id={illustration.id}
-              />
-            </li>
-          );
-        })}
+
+<div className="container">
+            {this.state.illustration.map((illustration, i) => {
+                 return (
+               
+             
+                     <div className="card">
+                       <img src={Image} class="card-img-top" />
+                       <div className="card-body">
+                       <IllustrationButton className="card-title" illustration_title={illustration.artwork_title} id={illustration.id} />
+                         <h6 className="card-subtitle">{illustration.artwork_subtitle}</h6>
+                         <p className="card-price">${illustration.price}</p>
+   
+                         </div>
+                     </div>
+                  
+                 );
+               })}
+               </div>
+         
       </React.Fragment>
     );
   }

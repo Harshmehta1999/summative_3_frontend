@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import { navigate } from "@reach/router";
+import "../css/categories.css"
 
 export default class DesignButton extends Component {
   constructor(props) {
@@ -22,8 +23,8 @@ export default class DesignButton extends Component {
 
   render() {
     return (
-      <button onClick={this.getDesignInfo}>
-      {this.props.design_title}</button>
+      <h6 onClick={this.getDesignInfo}>
+      {this.props.design_title}</h6>
     );
   }
 }

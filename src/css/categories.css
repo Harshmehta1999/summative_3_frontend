@@ -5,14 +5,33 @@
 
 
 .card {
+    display: flex;
     justify-content: space-around;
-    width: 10rem;
-    height: 20rem;
+    width: 50%;
+    height: 18rem;
+    padding: 10px;
+    border: 1px solid white !important;
 }
 
 .container {
-    margin: 0;
+    width: 100%;
     padding: 20px;
-
     display: flex;
+    flex-flow: wrap;
+}
+
+.card-subtitle, .card-price, .card-title, h6 {
+    text-align: inherit;
+    letter-spacing: 0.02rem;
+    font-size: 0.8rem;
+}
+
+.card-body {
+    margin-top: 10px !important;
+    padding: 0px !important;
+}
+
+
+.favourites {
+    width: 40vw;
 }

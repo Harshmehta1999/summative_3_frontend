@@ -5,6 +5,7 @@ import * as UTILS from "../utils";
 import PaintingButton from "../buttons/PaintingButton";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
+import Image from "../images/artist.jpg"
 
 export default class Painting extends Component {
   constructor(props) {
@@ -37,16 +38,25 @@ export default class Painting extends Component {
 
         <span>PAINTINGS</span>
 
-        {this.state.painting.map((painting, i) => {
-          return (
-            <li key={painting.price}>
-              <PaintingButton
-                painting_title={painting.artwork_title}
-                id={painting.id}
-              />
-            </li>
-          );
-        })}
+
+<div className="container">
+            {this.state.painting.map((painting, i) => {
+                 return (
+               
+             
+                     <div className="card">
+                       <img src={Image} class="card-img-top" />
+                       <div className="card-body">
+                       <PaintingButton className="card-title" painting_title={painting.artwork_title} id={painting.id} />
+                         <h6 className="card-subtitle">{painting.artwork_subtitle}</h6>
+                         <p className="card-price">${painting.price}</p>
+   
+                         </div>
+                     </div>
+                  
+                 );
+               })}
+               </div>
       </React.Fragment>
     );
   }

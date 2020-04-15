@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-// import { navigate } from "@reach/router";
 import PhotographyButton from "../buttons/PhotographyButton";
-
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
+import Image from "../images/artist.jpg"
+import Heart from "../images/heart.png"
+
 
 export default class Photography extends Component {
   constructor(props) {
@@ -14,10 +15,6 @@ export default class Photography extends Component {
     this.state = { photography: [] };
   }
 
-  // getDesignInfo = e => {
-  //   navigate(`/IndividualArtwork/${this.props.id}`)
-
-  // };
 
   componentDidMount() {
     Axios.get(UTILS.category_photography_url).then(res => {
@@ -38,16 +35,30 @@ export default class Photography extends Component {
 
         <span>PHOTOGRAPHY</span>
 
-        {this.state.photography.map((photography, i) => {
-          return (
-            <li key={photography.price}>
-              <PhotographyButton
-                photography_title={photography.artwork_title}
-                id={photography.id}
-              />
-            </li>
-          );
-        })}
+
+
+<div className="container">
+            {this.state.photography.map((photography, i) => {
+                 return (
+               
+             
+                     <div className="card">
+                       <img src={Image} class="card-img-top" />
+                       <div className="card-body">
+                       <PhotographyButton className="card-title" design_title={photography.artwork_title} id={photography.id} />
+                         <h6 className="card-subtitle">{photography.artwork_subtitle}</h6>
+                         <p className="card-price">${photography.price} </p>
+                         <img src={Heart} className="favourites" alt="faveourites"/>
+   
+                       </div>
+                     </div>
+                  
+                 );
+               })}
+               </div>
+
+
+
       </React.Fragment>
     );
   }
