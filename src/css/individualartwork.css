@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+}
+
+img {
+    width: 80vw;
+}
+
+.artist-info {
+    display: flex;
+    flex-direction: column;
+    text-align: initial;
+    width: 100%;
+}
+

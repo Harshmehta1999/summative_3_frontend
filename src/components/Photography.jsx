@@ -45,10 +45,10 @@ export default class Photography extends Component {
                      <div className="card">
                        <img src={Image} class="card-img-top" />
                        <div className="card-body">
-                       <PhotographyButton className="card-title" design_title={photography.artwork_title} id={photography.id} />
+                       <PhotographyButton className="card-title" photography_title={photography.artwork_title} id={photography.id} />
                          <h6 className="card-subtitle">{photography.artwork_subtitle}</h6>
                          <p className="card-price">${photography.price} </p>
-                         <img src={Heart} className="favourites" alt="faveourites"/>
+                         {/* <img src={Heart} className="favourites" alt="faveourites"/> */}
    
                        </div>
                      </div>

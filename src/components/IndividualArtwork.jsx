@@ -3,6 +3,7 @@ import Axios from "axios";
 // import { navigate } from "@reach/router";
 import SubNav from "./SubNav";
 import TopNav from "./TopNav";
+import "../css/individualartwork.css";
 
 export default class IndividualArtwork extends Component {
   constructor(props) {
@@ -26,23 +27,28 @@ export default class IndividualArtwork extends Component {
   render() {
     return (
       <React.Fragment>
-      <TopNav />
-      <SubNav />
-      <div>
-        <h2>hello</h2>
-
-        {this.state.artworks.map((artwork, i) => {
-          return (
-            <h2>
-              {" "}
-              artwork Title = {artwork.artwork_title}
-              <br></br>artwork subtitle = {artwork.artwork_subtitle}
-              <br></br>artworks price = {artwork.price}
-              <br></br>
-            </h2>
-          );
-        })}
-      </div>
+        <TopNav />
+        <SubNav />
+        <div>
+          {this.state.artworks.map((artwork, i) => {
+            return (
+              <div className="container">
+                {" "}
+                <div className="image">
+                <img
+                  src={`http://localhost:9000/${artwork.image}`}
+                  alt="img"
+                  // onClick={this.productDisplay}
+                /></div>
+                <div className="artist-info">
+                <h6 className="artwork-title">{artwork.artwork_title}</h6>
+                <div className="artwork-subtitle">{artwork.artwork_subtitle}</div>
+                <p className="artwork-price">${artwork.price}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </React.Fragment>
     );
   }

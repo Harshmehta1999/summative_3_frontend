@@ -16,11 +16,14 @@
     margin-top: 10px;
 }
 
-p, label {
+.info, label {
     text-align: center;
-    margin: 0;
     letter-spacing: 0.03rem;
     font-size: 0.9rem;
+}
+
+p {
+    margin-bottom: 5px;
 }
 
 input, select, textarea {
