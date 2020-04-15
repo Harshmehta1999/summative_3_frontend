@@ -37,6 +37,7 @@ export default class IndividualArtwork extends Component {
     // formData.append("_id",Date.now())
     Axios.post(UTILS.add_comment, formData).then(res => {
       console.log(res);
+      
     });
   };
 
@@ -57,11 +58,13 @@ export default class IndividualArtwork extends Component {
               artwork Title = {artwork.artwork_title}
               <br></br>artwork subtitle = {artwork.artwork_subtitle}
               <br></br>artworks price = {artwork.price}
-              <br></br>artwork image = {artwork.image}
+              {/* <br></br>artwork image = {artwork.image} */}
               <br></br>        <img
-              src={this.props.image}
-              alt="item-img"
-              onClick={this.productDisplay}
+        
+              src={`http://localhost:9000/${artwork.image}`}
+
+              alt="img"
+              // onClick={this.productDisplay}
             />
        
               
@@ -80,24 +83,9 @@ export default class IndividualArtwork extends Component {
               placeholder="add comment"
             ></textarea>
             <Button type="submit"  design_title={this.props.artwork_title} id={this.props.id}>Submit</Button>
-            {/* <CommentButton artwork_title={artwork.artwork_title} id={artwork.id} /> */}
-          </form>
-          {/* <select id="lang" onChange={this.props.onCategoryUpdated}>
-            {this.state.categories.map((category, i) => {
-              let fullname = `${category.category_title} ${category.cat_id}`;
-              return (
-                <option key={i} value={category.cat_id} >
-                 
-                  {fullname}
-                  
 
-                </option>
-                
-                
-              );
-             
-            })}
-          </select>  */}
+          </form>
+
         </div>
       </div>
     );

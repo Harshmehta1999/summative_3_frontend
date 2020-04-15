@@ -18,8 +18,6 @@ export default class AddArtwork extends Component {
   AddArtwork = (e) => {
     e.preventDefault();
     var formData = new FormData(this.formRef.current);
-    // FYI: form still works even if there is no image included
-    // forms with images look a bit different - we need to add this line.
     var settings = {
     headers: { "Content-Type": "multipart/form-data" },
     };
@@ -35,16 +33,6 @@ export default class AddArtwork extends Component {
     });
     };
     
-    uploadToExpress = (e) => {
-    e.preventDefault();
-    // grab reference to the form data
-    var formData = new FormData(this.formRef.current);
-    var settings = { headers: { "Content-Type": "multipart/form-data" } };
-    console.log(">>>+ FORMDATA ", formData);
-    Axios.post(UTILS.add_artwork, formData, settings).then((res) => {
-    console.log(res);
-    });
-    };
 
 
 
@@ -76,19 +64,21 @@ export default class AddArtwork extends Component {
           <input type="text" name="artwork_subtitle" placeholder="subtitle" />
 
           <label>Price</label>
-          <input type="text" name="price" placeholder="price" />
+          <input type="text" name="price" placeholder="price" /> 
+          <input type="file" name="image"></input>
+          {/* <input type="text" name="image" placeholder="price" /> */}
 
           <input id="id" type="hidden" name="id" value={this.state.id} />
 
           <input type="hidden" name="cat_id" value={this.state.cat_id} />
           {/* <input type="hidden" name="artwork_title" value={this.state.artwork_title} /> */}
 
-          <div className="uploadimg-con">
+          
          
-         <input type="file" name="image" onChange={this.uploadToExpress} className="upload-img"></input>
-       </div>
+        
+  
 
-       <button className="btn btn-primary btn-wide">Add Item</button>
+       <button>Add Item</button>
           
         </form>
           {/* <ImageUpload /> */}
