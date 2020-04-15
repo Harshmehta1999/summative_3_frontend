@@ -12,13 +12,10 @@ import Illustration from "./components/Illustration"
 import IndividualArtwork from "./components/IndividualArtwork";
 import Photography from "./components/Photography";
 import Painting from "./components/Painting";
-<<<<<<< HEAD
-=======
 import LoginSignup from "./components/LoginSignup";
 import SignupPage from "./components/SignupPage";
 import Profile from "./components/Profile";
 import EditUserProfile from "./components/EditUserProfile";
->>>>>>> harsh-branch
 
 
 

@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import Axios from "axios"
 import { navigate } from "@reach/router";
-<<<<<<< HEAD
-import GlobalNav from "../components/GlobalNav"
-
-=======
 import { Button } from "reactstrap";
 import * as UTILS from "../utils";
 import CommentButton from "./CommentButton";
->>>>>>> harsh-branch
 
 export default class IndividualArtwork extends Component {
   constructor(props) {
@@ -47,10 +42,6 @@ export default class IndividualArtwork extends Component {
         <h2>helloss</h2>
         
 
-<<<<<<< HEAD
-        <div>
-           <GlobalNav />
-=======
         {this.state.artworks.map((artwork, i) => {
           return (
             <h2>
@@ -73,7 +64,6 @@ export default class IndividualArtwork extends Component {
             
           );
         })}
->>>>>>> harsh-branch
 
         <div className="comment-wrapper">
           <form onSubmit={this.AddComment} ref={this.formRef}>
