@@ -13,11 +13,11 @@ export default class LoginSignup extends Component {
   }; 
   render() {
     return (
-      <div className="Homepage">
+      <div>
 
         <h1>Logo</h1>
-        <button className="btn btn-primary btn-wide" onClick={this.loginpage}>Log in</button>
-        <button className="btn btn-secondary btn-wide" onClick={this.signuppage}>Sign up</button>
+        <button  onClick={this.loginpage}>Log in</button>
+        <button onClick={this.signuppage}>Sign up</button>
       </div>
     );
   }

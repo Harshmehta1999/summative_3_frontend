@@ -14,14 +14,6 @@ export default class Photography extends Component {
         
       }
 
-      // getDesignInfo = e => {
-      //   navigate(`/IndividualArtwork/${this.props.id}`)
-     
-
-        
-        
-    
-      // };
 
       componentDidMount(){
         Axios.get(UTILS.category_photography_url).then(

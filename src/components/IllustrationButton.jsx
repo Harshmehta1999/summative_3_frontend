@@ -2,35 +2,22 @@ import React, { Component } from "react";
 import Axios from "axios";
 import { navigate } from "@reach/router";
 
-export default class DesignButton extends Component {
-
+export default class IllustrationButton extends Component {
   constructor(props) {
     super(props);
 
-    console.table(this.props)
-    
+    console.table(this.props);
   }
 
-  getIllustrationInfo = e => {
-    navigate(`/IndividualArtwork/${this.props.id}`)
-    
-    
-
+  getIllustrationInfo = (e) => {
+    navigate(`/IndividualArtwork/${this.props.id}`);
   };
 
-  // render(){
-  //   return(
-  //   <h2>{this.props.bookTitle}</h2>
-    
-   
-  //   )
-  // }
-
-
   render() {
-    return <button onClick={this.getIllustrationInfo}>{this.props.illustration_title}</button>;
-
-
-    
+    return (
+      <button onClick={this.getIllustrationInfo}>
+        {this.props.illustration_title}
+      </button>
+    );
   }
 }
