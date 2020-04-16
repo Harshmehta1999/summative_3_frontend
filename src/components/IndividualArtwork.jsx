@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import Axios from "axios"
 import { navigate } from "@reach/router";
 import { Button } from "reactstrap";
+import { Link } from "@reach/router";
 import * as UTILS from "../utils";
 import CommentButton from "./CommentButton";
+import AddToCartButton from "./AddToCartButton";
 
 export default class IndividualArtwork extends Component {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
-    this.state = { artworks: [],  };
+    this.state = { artworks: [] };
   }
 
   componentDidMount() {
@@ -24,15 +26,16 @@ export default class IndividualArtwork extends Component {
     );
   }
 
+  AddToCart = (e) => {
+    navigate(`/cart`);
+  };
 
-  AddComment = e => {
+  AddComment = (e) => {
     e.preventDefault();
-    alert("submitted")
+    alert("submitted");
     var formData = new FormData(this.formRef.current);
-    // formData.append("_id",Date.now())
-    Axios.post(UTILS.add_comment, formData).then(res => {
+    Axios.post(UTILS.add_comment, formData).then((res) => {
       console.log(res);
-      
     });
   };
 
@@ -40,42 +43,46 @@ export default class IndividualArtwork extends Component {
     return (
       <div>
         <h2>helloss</h2>
-        
 
         {this.state.artworks.map((artwork, i) => {
           return (
-            <h2>
-      
-              artwork Title = {artwork.artwork_title}
-              <br></br>artwork subtitle = {artwork.artwork_subtitle}
-              <br></br>artworks price = {artwork.price}
-              {/* <br></br>artwork image = {artwork.image} */}
-              <br></br>        <img
-        
-              src={`http://localhost:9000/${artwork.image}`}
-
-              alt="img"
-              // onClick={this.productDisplay}
-            />
-       
-              
-              {/* <input type="hidden" name="artwork_title" value={this.state.artwork_title} /> */}
-            </h2>
-            
+            <div>
+              <h2>
+                artwork Title = {artwork.artwork_title}
+                <br></br>artwork subtitle = {artwork.artwork_subtitle}
+                <br></br>artworks price = {artwork.price}
+                <br></br>{" "}
+                <img src={`http://localhost:9000/${artwork.image}`} alt="img" />
+              </h2>
+              {this.state.artworks.map((artworks, i) => {
+                return (
+                  <li>
+                    <AddToCartButton
+                      artworks_title={artworks.artwork_title}
+                      id={artworks.id}
+                    />
+                  </li>
+                );
+              })}
+            </div>
           );
         })}
 
-        <div className="comment-wrapper">
+        <div>
           <form onSubmit={this.AddComment} ref={this.formRef}>
             <textarea
               type="text"
               name="comment"
               placeholder="add comment"
             ></textarea>
-            <Button type="submit"  design_title={this.props.artwork_title} id={this.props.id}>Submit</Button>
-
+            <Button
+              type="submit"
+              design_title={this.props.artwork_title}
+              id={this.props.id}
+            >
+              Submit
+            </Button>
           </form>
-
         </div>
       </div>
     );

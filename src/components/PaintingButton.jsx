@@ -3,34 +3,21 @@ import Axios from "axios";
 import { navigate } from "@reach/router";
 
 export default class PaintingButton extends Component {
-
   constructor(props) {
     super(props);
 
-    console.table(this.props)
-    
+    console.table(this.props);
   }
 
-  getPaintingInfo = e => {
-    navigate(`/IndividualArtwork/${this.props.id}`)
-    
-    
-
+  getPaintingInfo = (e) => {
+    navigate(`/IndividualArtwork/${this.props.id}`);
   };
 
-  // render(){
-  //   return(
-  //   <h2>{this.props.bookTitle}</h2>
-    
-   
-  //   )
-  // }
-
-
   render() {
-    return <button onClick={this.getPaintingInfo}>{this.props.painting_title}</button>;
-
-
-    
+    return (
+      <button onClick={this.getPaintingInfo}>
+        {this.props.painting_title}
+      </button>
+    );
   }
 }

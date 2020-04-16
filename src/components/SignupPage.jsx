@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { navigate } from "@reach/router";
 
-
 const initialState = {
   User: "",
   Email: "",
@@ -11,65 +10,34 @@ const initialState = {
   EmailError: "",
   PhoneError: "",
   PasswordError: "",
-}
-
+};
 
 export default class SignupPage extends Component {
-  // Saving user Info to profile page
-
   constructor(props) {
     super(props);
 
-    // init state - may be overwritten
     this.state = initialState;
   }
 
   UserChange = (e) => {
     this.setState({ User: e.target.value });
     localStorage.setItem("user", e.target.value);
-    // const isCheckbox = e.target.type === "checkbox";
-    // this.setState({
-    //   [e.target.name]: isCheckbox
-    //     ? e.target.checked
-    //     : e.target.value
-    // });
   };
 
   EmailChange = (e) => {
     this.setState({ Email: e.target.value });
     localStorage.setItem("email", e.target.value);
-    // const isCheckbox = e.target.type === "checkbox";
-    // this.setState({
-    //   [e.target.name]: isCheckbox
-    //     ? e.target.checked
-    //     : e.target.value
-    // });
-
   };
 
   PhoneChange = (e) => {
     this.setState({ Phone: e.target.value });
     localStorage.setItem("phone", e.target.value);
-    // const isCheckbox = e.target.type === "checkbox";
-    // this.setState({
-    //   [e.target.name]: isCheckbox
-    //     ? e.target.checked
-    //     : e.target.value
-    // });
   };
 
   PasswordChange = (e) => {
     this.setState({ Password: e.target.value });
     localStorage.setItem("password", e.target.value);
-    // const isCheckbox = e.target.type === "checkbox";
-    // this.setState({
-    //   [e.target.name]: isCheckbox
-    //     ? e.target.checked
-    //     : e.target.value
-    // });
   };
-
-  // Form info validation
 
   validate = () => {
     let UserError = "";
@@ -104,24 +72,20 @@ export default class SignupPage extends Component {
     if (EmailError || UserError || PhoneError || PasswordError) {
       this.setState({ EmailError, UserError, PhoneError, PasswordError });
       return false;
-
-    } return true;
-
-  }
+    }
+    return true;
+  };
 
   onSubmit = (e) => {
     e.preventDefault();
     const isValid = this.validate();
     if (isValid) {
       console.log(this.state);
-      this.setState(initialState)
-      navigate("/profile-page")
-      
+      this.setState(initialState);
+      navigate("/profile-page");
     }
-
   };
 
-  // Placing information to profile
   componentDidMount() {
     if (localStorage.getItem("user")) {
       this.setState({
@@ -145,8 +109,6 @@ export default class SignupPage extends Component {
   render() {
     return (
       <React.Fragment>
-
-
         <div>
           <form onSubmit={this.onSubmit}>
             <input
@@ -181,10 +143,8 @@ export default class SignupPage extends Component {
               onChange={this.PasswordChange}
             ></input>
             <div>{this.state.PasswordError}</div>
-          
-            <button type="submit">
-              Sign up
-            </button>
+
+            <button type="submit">Sign up</button>
           </form>
         </div>
       </React.Fragment>

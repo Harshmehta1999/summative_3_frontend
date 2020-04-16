@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { navigate } from "@reach/router";
 
-
 export default class Profile extends Component {
   constructor() {
     super();
@@ -25,33 +24,18 @@ export default class Profile extends Component {
   render() {
     return (
       <React.Fragment>
-        
         <div>
-      
-
           <div>
- 
-
             <div>
               <h3>{this.state.user}</h3>
               <p>{this.state.email}</p>
-              <p >{this.state.phone}</p>
+              <p>{this.state.phone}</p>
             </div>
           </div>
 
-          <button
-
-            onClick={this.gotoUserEdit}
-          >
-            Edit Profile
-          </button>
-
-
+          <button onClick={this.gotoUserEdit}>Edit Profile</button>
         </div>
-
-
       </React.Fragment>
     );
   }
 }
-
