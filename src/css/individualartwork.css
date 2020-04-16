@@ -2,14 +2,22 @@
     margin: 0;
 }
 
+.image {
+    width: 100%;
+    align-items: center;
+}
 img {
     width: 80vw;
 }
 
 .artist-info {
+    margin-top:  20px;
     display: flex;
     flex-direction: column;
     text-align: initial;
     width: 100%;
 }
 
+.artwork-title {
+    font-weight: bold;
+}

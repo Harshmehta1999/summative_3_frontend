@@ -32,7 +32,7 @@ export default class IndividualArtwork extends Component {
         <div>
           {this.state.artworks.map((artwork, i) => {
             return (
-              <div className="container">
+              <div className="info-container">
                 {" "}
                 <div className="image">
                 <img
