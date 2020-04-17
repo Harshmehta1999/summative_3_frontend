@@ -8,16 +8,15 @@ export default class CategorySelector extends Component {
   constructor(props) {
     super(props);
     this.state = { categories: [], selected_id: null };
-    this.writer_id = null;
   }
 
   componentDidMount() {
     Axios.get(UTILS.categories_url).then(
-      res => {
+      (res) => {
         this.setState({ categories: res.data });
         console.log(res.data);
       },
-      error => {
+      (error) => {
         console.log("error = ", error);
       }
     );
@@ -30,10 +29,10 @@ export default class CategorySelector extends Component {
 
         <div>
           <select id="lang" onChange={this.props.onCategoryUpdated}>
-            {this.state.categories.map((writer, i) => {
-              let fullname = `${writer.category_title} ${writer.cat_id}`;
+            {this.state.categories.map((category, i) => {
+              let fullname = `${category.category_title} ${category.cat_id}`;
               return (
-                <option key={i} value={writer.cat_id}>
+                <option key={i} value={category.cat_id}>
                   {fullname}
                 </option>
               );

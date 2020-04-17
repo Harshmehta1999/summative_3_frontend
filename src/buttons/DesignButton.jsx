@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Axios from "axios";
+// import Axios from "axios";
 import { navigate } from "@reach/router";
 import "../css/categories.css"
 
@@ -14,12 +14,7 @@ export default class DesignButton extends Component {
     navigate(`/IndividualArtwork/${this.props.id}`);
   };
 
-  // render(){
-  //   return(
-  //   <h2>{this.props.bookTitle}</h2>
-
-  //   )
-  // }
+  
 
   render() {
     return (

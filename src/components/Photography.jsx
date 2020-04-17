@@ -5,7 +5,7 @@ import PhotographyButton from "../buttons/PhotographyButton";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
 import Image from "../images/artist.jpg"
-import Heart from "../images/heart.png"
+// import Heart from "../images/heart.png"
 
 
 export default class Photography extends Component {
@@ -43,7 +43,7 @@ export default class Photography extends Component {
                
              
                      <div className="card">
-                       <img src={Image} class="card-img-top" />
+                       <img src={Image} class="card-img-top" alt="product" />
                        <div className="card-body">
                        <PhotographyButton className="card-title" photography_title={photography.artwork_title} id={photography.id} />
                          <h6 className="card-subtitle">{photography.artwork_subtitle}</h6>

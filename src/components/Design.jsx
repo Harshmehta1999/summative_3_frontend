@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-import { navigate } from "@reach/router";
+// import { navigate } from "@reach/router";
 import DesignButton from "../buttons/DesignButton";
 import SubNav from "./SubNav";
 import TopNav from "./TopNav";
@@ -9,7 +9,6 @@ import "../css/categories.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 import Image from "../images/artist.jpg"
-
 
 export default class Design extends Component {
   constructor(props) {
@@ -61,7 +60,7 @@ export default class Design extends Component {
                  );
                })}
                </div>
-         
+
       </React.Fragment>
     );
   }

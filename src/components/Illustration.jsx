@@ -7,7 +7,6 @@ import TopNav from "./TopNav";
 import SubNav from "./SubNav"
 import Image from "../images/artist.jpg"
 
-
 export default class Illustration extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +45,7 @@ export default class Illustration extends Component {
                
              
                      <div className="card">
-                       <img src={Image} class="card-img-top" />
+                       <img src={Image} class="card-img-top" alt="product-image" />
                        <div className="card-body">
                        <IllustrationButton className="card-title" illustration_title={illustration.artwork_title} id={illustration.id} />
                          <h6 className="card-subtitle">{illustration.artwork_subtitle}</h6>

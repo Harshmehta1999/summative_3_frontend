@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SubNav from "./SubNav";
 import TopNav from "./TopNav";
 import "../css/search.css";
-import Design from "./Design"
+// import Design from "./Design"
 
 export default class Search extends Component {
   constructor(props) {

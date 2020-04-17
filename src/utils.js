@@ -2,7 +2,8 @@ const api_url = "http://localhost:9000/api";
 const designers_url = api_url + "/designers";
 const categories_url = api_url + "/categories";
 const artworks_url = api_url + "/artworks";
-
+const comments_url = api_url + "/comments";
+const edit_artwork = api_url + "/artworks";
 
 //GET DESIGN CATEGORY
 const category_design_url = api_url + "/artworks/category/1";
@@ -16,11 +17,11 @@ const category_photography_url = api_url + "/artworks/category/3";
 //GET PAINTINGS CATEGORY
 const category_painting_url = api_url + "/artworks/category/4";
 
-
 // POST
 const add_artwork = api_url + "/artworks";
 
-
+// POST
+const add_comment = api_url + "/comments";
 
 export {
     api_url,
@@ -31,5 +32,8 @@ export {
     category_design_url,
     category_illustration_url,
     category_photography_url,
-    category_painting_url
+    category_painting_url,
+    add_comment,
+    comments_url,
+    edit_artwork,
 };

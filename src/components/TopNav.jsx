@@ -16,7 +16,7 @@ export default class TopNav extends Component {
       <React.Fragment>
         <div className="top-nav">
           <img src={leftArrow} alt="search" className="arrow-top" />
-          <h3></h3>
+          <h3> </h3>
           <div className="search-wrapper">
             <img
               src={search}

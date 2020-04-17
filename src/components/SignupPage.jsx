@@ -10,64 +10,35 @@ const initialState = {
   UserError: "",
   EmailError: "",
   PhoneError: "",
-  PasswordError: ""
+  PasswordError: "",
 };
 
 export default class SignupPage extends Component {
-  // Saving user Info to profile page
-
   constructor(props) {
     super(props);
 
-    // init state - may be overwritten
     this.state = initialState;
   }
 
-  UserChange = e => {
+  UserChange = (e) => {
     this.setState({ User: e.target.value });
     localStorage.setItem("user", e.target.value);
-    // const isCheckbox = e.target.type === "checkbox";
-    // this.setState({
-    //   [e.target.name]: isCheckbox
-    //     ? e.target.checked
-    //     : e.target.value
-    // });
   };
 
-  EmailChange = e => {
+  EmailChange = (e) => {
     this.setState({ Email: e.target.value });
     localStorage.setItem("email", e.target.value);
-    // const isCheckbox = e.target.type === "checkbox";
-    // this.setState({
-    //   [e.target.name]: isCheckbox
-    //     ? e.target.checked
-    //     : e.target.value
-    // });
   };
 
-  PhoneChange = e => {
+  PhoneChange = (e) => {
     this.setState({ Phone: e.target.value });
     localStorage.setItem("phone", e.target.value);
-    // const isCheckbox = e.target.type === "checkbox";
-    // this.setState({
-    //   [e.target.name]: isCheckbox
-    //     ? e.target.checked
-    //     : e.target.value
-    // });
   };
 
-  PasswordChange = e => {
+  PasswordChange = (e) => {
     this.setState({ Password: e.target.value });
     localStorage.setItem("password", e.target.value);
-    // const isCheckbox = e.target.type === "checkbox";
-    // this.setState({
-    //   [e.target.name]: isCheckbox
-    //     ? e.target.checked
-    //     : e.target.value
-    // });
   };
-
-  // Form info validation
 
   validate = () => {
     let UserError = "";
@@ -106,7 +77,7 @@ export default class SignupPage extends Component {
     return true;
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
     const isValid = this.validate();
     if (isValid) {
@@ -116,23 +87,22 @@ export default class SignupPage extends Component {
     }
   };
 
-  // Placing information to profile
   componentDidMount() {
     if (localStorage.getItem("user")) {
       this.setState({
-        User: localStorage.getItem("user")
+        User: localStorage.getItem("user"),
       });
     }
 
     if (localStorage.getItem("email")) {
       this.setState({
-        Email: localStorage.getItem("email")
+        Email: localStorage.getItem("email"),
       });
     }
 
     if (localStorage.getItem("phone")) {
       this.setState({
-        Phone: localStorage.getItem("phone")
+        Phone: localStorage.getItem("phone"),
       });
     }
   }

@@ -21,8 +21,15 @@ import LoginSignup from "./components/LoginSignup";
 import SignupPage from "./components/SignupPage";
 import Profile from "./components/Profile";
 import EditUserProfile from "./components/EditUserProfile";
+import Cart from "./components/Cart";
+import UserArtwoks from "./components/UserArtwoks";
+import UserArtworkInfo from "./components/UserArtworkInfo";
+import EditArtwork from "./components/EditArtwork";
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
@@ -43,15 +50,16 @@ export default class App extends React.Component {
           <EditUserProfile path="/edit-userprofile-page"/>
           <AddArtwork path="/addartwork" />
           <Search path="/search" />
+          <Cart path="/cart" />
+          <UserArtwoks path="/user-artworks" />
+          <UserArtworkInfo path="/UserArtworkInfo/:id" />
+          <EditArtwork path="/edit-details/:id" />
 
           <LandingPage path="/creativecorner" />
           <TopNav path="/header" />
         </Router>
-        {/* <GlobalNav />  */}
 
-        {/* 
-  <AddArtwork /> */}
-        {/* <CategorySelector /> */}
+
       </React.Fragment>
     );
   }

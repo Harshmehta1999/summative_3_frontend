@@ -14,9 +14,13 @@ export default class Home extends React.Component {
     super(props);
     this.state = { categories: [], designers: [] };
   }
+
+  //   this.state = { selectedFile: null };
+  // }
+
   componentDidMount() {
     Axios.get(UTILS.categories_url).then(
-      res => {
+      (res) => {
         if (res.data.result === false) {
           this.setState({ result: false });
         } else {
@@ -24,7 +28,7 @@ export default class Home extends React.Component {
           this.setState({ categories: res.data, result: true });
         }
       },
-      error => {
+      (error) => {
         console.log("error = ", error);
       }
     );

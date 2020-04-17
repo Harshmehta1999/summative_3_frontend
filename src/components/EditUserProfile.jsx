@@ -15,45 +15,45 @@ export default class EditUserProfile extends Component {
     };
   }
 
-  BackToProfile = e => {
+  BackToProfile = (e) => {
     navigate("/account");
   };
 
-  onChangeUser = e => {
+  onChangeUser = (e) => {
     this.setState({ User: e.target.value });
     localStorage.setItem("user", e.target.value);
   };
 
-  onChangeEmail = e => {
+  onChangeEmail = (e) => {
     this.setState({ Email: e.target.value });
     localStorage.setItem("email", e.target.value);
   };
 
-  onChangePhone = e => {
+  onChangePhone = (e) => {
     this.setState({ Phone: e.target.value });
     localStorage.setItem("phone", e.target.value);
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
   };
 
   componentDidMount() {
     if (localStorage.getItem("user")) {
       this.setState({
-        User: localStorage.getItem("user")
+        User: localStorage.getItem("user"),
       });
     }
 
     if (localStorage.getItem("email")) {
       this.setState({
-        Email: localStorage.getItem("email")
+        Email: localStorage.getItem("email"),
       });
     }
 
     if (localStorage.getItem("phone")) {
       this.setState({
-        Phone: localStorage.getItem("phone")
+        Phone: localStorage.getItem("phone"),
       });
     }
   }

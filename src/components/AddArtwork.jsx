@@ -1,33 +1,42 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-import Axios from "axios";
+// import { navigate } from "@reach/router";
 import * as UTILS from "../utils";
 import CategorySelector from "./CategorySelector";
 import SubNav from "./SubNav";
 import TopNav from "./TopNav";
 import "../css/addartwork.css";
+import Axios from "axios";
 
 export default class AddArtwork extends Component {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
-    this.state = { categories: [], selected_id: null };
+    this.state = { categories: [], selected_id: null, id: Date.now() };
   }
 
-  onCategoryUpdated = e => {
+  AddArtwork = (e) => {
+    e.preventDefault();
+    var formData = new FormData(this.formRef.current);
+    var settings = {
+      headers: { "Content-Type": "multipart/form-data" },
+    };
+
+    console.log(">>> FORMDATA ", formData);
+    Axios.post(UTILS.add_artwork, formData, settings)
+      .then((res) => {
+        console.log(res);
+        // navigate(`/artworks/${res.data.id}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  onCategoryUpdated = (e) => {
     this.setState({ cat_id: e.target.value });
   };
 
-  AddArtwork = e => {
-    e.preventDefault();
-
-    var formData = new FormData(this.formRef.current);
-    // formData.append("_id",Date.now())
-
-    Axios.post(UTILS.add_artwork, formData).then(res => {
-      console.log(res);
-    });
-  };
   render() {
     return (
       <React.Fragment>        
@@ -49,12 +58,16 @@ export default class AddArtwork extends Component {
           <label>Price</label> */}
             <input type="text" name="price" placeholder="Price" />
 
+            
+
             <textarea
               type="textarea"
               name="product-description"
               placeholder="Product Description"
               rows="5"
             />
+
+<input type="file" name="image"></input>
 
             <input type="hidden" name="cat_id" value={this.state.cat_id} />
 
