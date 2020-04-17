@@ -19,7 +19,7 @@ import LandingPage from "./components/LandingPage";
 import Search from "./components/Search";
 import LoginSignup from "./components/LoginSignup";
 import SignupPage from "./components/SignupPage";
-import Profile from "./components/Profile";
+import ProfileDetails from "./components/Profile";
 import EditUserProfile from "./components/EditUserProfile";
 import Cart from "./components/Cart";
 import UserArtwoks from "./components/UserArtwoks";
@@ -46,7 +46,7 @@ export default class App extends React.Component {
           <Account path="/account" />
           <LoginSignup path="/loginpage" />
           <SignupPage path="/signuppage"/>
-          <Profile path="/profile-page"/>
+          <ProfileDetails path="/profile-page"/>
           <EditUserProfile path="/edit-userprofile-page"/>
           <AddArtwork path="/addartwork" />
           <Search path="/search" />

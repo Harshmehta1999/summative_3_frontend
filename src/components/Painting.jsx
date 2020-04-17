@@ -5,7 +5,7 @@ import * as UTILS from "../utils";
 import PaintingButton from "../buttons/PaintingButton";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
-import Image from "../images/artist.jpg"
+
 
 export default class Painting extends Component {
   constructor(props) {
@@ -45,7 +45,9 @@ export default class Painting extends Component {
                
              
                      <div className="card">
-                       <img src={Image} class="card-img-top" />
+                                              <div className="card-img-top-box wrap">
+                       <img src={`http://localhost:9000/${painting.image}`} class="card-img-top" />
+                       </div>
                        <div className="card-body">
                        <PaintingButton className="card-title" painting_title={painting.artwork_title} id={painting.id} />
                          <h6 className="card-subtitle">{painting.artwork_subtitle}</h6>

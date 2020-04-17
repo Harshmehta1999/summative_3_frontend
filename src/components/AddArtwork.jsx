@@ -62,7 +62,7 @@ export default class AddArtwork extends Component {
 
             <textarea
               type="textarea"
-              name="product-description"
+              name="product_description"
               placeholder="Product Description"
               rows="5"
             />

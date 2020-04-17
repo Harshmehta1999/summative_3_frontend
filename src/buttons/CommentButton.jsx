@@ -28,7 +28,7 @@ export default class CommentButton extends Component {
 
 
   render() {
-    return <button>submit</button>;
+    return <button>SUBMIT</button>;
 
 
     

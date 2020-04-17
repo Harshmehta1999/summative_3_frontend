@@ -8,8 +8,8 @@ import { navigate } from "@reach/router";
 import "../css/subnav.css";
 
 export default class SubNav extends Component {
-  goHome = e => {
-    navigate(`/creativecorner`);
+  goSearch = e => {
+    navigate(`/search`);
   };
 
   goMenu = e => {
@@ -22,15 +22,16 @@ export default class SubNav extends Component {
 
   render() {
     return (
+      <div className="bttom">
       <div className="nav-bar">
-        <footer>
-          <img src={home} alt="home" className="home icon" onClick={this.goHome} />
+        <footer><nav class="navbar fixed-bottom navbar-light bg-light">
+          <img src={home} alt="home" className="home icon" onClick={this.goMenu} />
 
           <img
             src={search}
             alt="search"
             className="search-bottom icon"
-            onClick={this.goMenu}
+            onClick={this.goSearch}
           />
 
           <img src={shopping} alt="shopping" className="shopping icon" />
@@ -43,8 +44,8 @@ export default class SubNav extends Component {
             className="account icon"
             onClick={this.goAccount}
           />
-        </footer>
-      </div>
+       </nav> </footer>
+      </div></div>
     );
   }
 }

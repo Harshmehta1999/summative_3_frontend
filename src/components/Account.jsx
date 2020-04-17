@@ -3,8 +3,9 @@ import { navigate } from "@reach/router";
 import SubNav from "./SubNav";
 import TopNav from "./TopNav";
 import "../css/menu.css";
-// import AddArtwork from "./AddArtwork";
+import "../css/edituserprofile.css"
 import Profile from "./Profile"
+import UserArtworkButton from "./UserArtworkButton";
 
 export default class Account extends Component {
   componentDidMount() {}
@@ -12,6 +13,10 @@ export default class Account extends Component {
   goAddArtwork = e => {
     navigate(`/addartwork`);
   };
+
+  goUserArtwork = e => {
+    navigate(`/user-artworks`)
+  }
 
   render() {
     return (
@@ -27,9 +32,21 @@ export default class Account extends Component {
             type="submit"
             onClick={this.goAddArtwork}
           >
-            LIST ITEM
+            LIST AN ITEM
           </button>
         </div>
+
+      <div className="submit">
+      <button
+      className="user-bttn"
+      type="submit"
+      onClick={this.goUserArtwork}
+    >
+        LISTINGS
+      </button>
+
+      </div>
+
 
         <span>ACCOUNT</span>
       </React.Fragment>

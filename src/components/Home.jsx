@@ -5,9 +5,9 @@ import "../App.css";
 import * as UTILS from "../utils";
 import Axios from "axios";
 
-import AddArtwork from "./AddArtwork";
 import TopNav from "./TopNav"
 import SubNav from "./SubNav"
+import LoginSignup from "../components/LoginSignup"
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -37,11 +37,10 @@ export default class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <TopNav />
-        <SubNav />
 
 
-        <AddArtwork />
+
+        <LoginSignup />
       </React.Fragment>
     );
   }

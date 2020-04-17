@@ -48,8 +48,9 @@ export default class Design extends Component {
                
              
                      <div className="card">
-                       <img src={Image} class="card-img-top" />
-                       <div className="card-body">
+                       <div className="card-img-top-box wrap">
+                       <img src={`http://localhost:9000/${design.image}`} className="card-img-top" />
+                       </div><div className="card-body">
                        <DesignButton className="card-title" design_title={design.artwork_title} id={design.id} />
                          <h6 className="card-subtitle">{design.artwork_subtitle}</h6>
                          <p className="card-price">${design.price}</p>

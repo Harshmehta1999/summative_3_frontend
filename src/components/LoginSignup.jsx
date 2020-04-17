@@ -4,7 +4,7 @@ import "../css/login_signup.css";
 
 export default class LoginSignup extends Component {
   loginpage = e => {
-    navigate(`/account`);
+    navigate(`/menu`);
   };
 
   signuppage = e => {

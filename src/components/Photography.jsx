@@ -4,9 +4,9 @@ import * as UTILS from "../utils";
 import PhotographyButton from "../buttons/PhotographyButton";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
-import Image from "../images/artist.jpg"
-// import Heart from "../images/heart.png"
+import "../css/categories.css";
 
+// import Heart from "../images/heart.png"
 
 export default class Photography extends Component {
   constructor(props) {
@@ -14,7 +14,6 @@ export default class Photography extends Component {
 
     this.state = { photography: [] };
   }
-
 
   componentDidMount() {
     Axios.get(UTILS.category_photography_url).then(res => {
@@ -35,30 +34,33 @@ export default class Photography extends Component {
 
         <span>PHOTOGRAPHY</span>
 
-
-
-<div className="container">
-            {this.state.photography.map((photography, i) => {
-                 return (
-               
-             
-                     <div className="card">
-                       <img src={Image} class="card-img-top" alt="product" />
-                       <div className="card-body">
-                       <PhotographyButton className="card-title" photography_title={photography.artwork_title} id={photography.id} />
-                         <h6 className="card-subtitle">{photography.artwork_subtitle}</h6>
-                         <p className="card-price">${photography.price} </p>
-                         {/* <img src={Heart} className="favourites" alt="faveourites"/> */}
-   
-                       </div>
-                     </div>
-                  
-                 );
-               })}
-               </div>
-
-
-
+        <div className="container">
+          {this.state.photography.map((photography, i) => {
+            return (
+              <div className="card">
+                <div className="card-img-top-box wrap">
+                  <img
+                    src={`http://localhost:9000/${photography.image}`}
+                    class="card-img-top"
+                    alt="product"
+                  />
+                </div>
+                <div className="card-body">
+                  <PhotographyButton
+                    className="card-title"
+                    photography_title={photography.artwork_title}
+                    id={photography.id}
+                  />
+                  <h6 className="card-subtitle">
+                    {photography.artwork_subtitle}
+                  </h6>
+                  <p className="card-price">${photography.price} </p>
+                  {/* <img src={Heart} className="favourites" alt="faveourites"/> */}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </React.Fragment>
     );
   }
