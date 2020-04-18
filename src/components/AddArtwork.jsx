@@ -56,7 +56,7 @@ export default class AddArtwork extends Component {
             <input type="text" name="artwork_subtitle" placeholder="Subtitle" />
             {/* 
           <label>Price</label> */}
-            <input type="text" name="price" placeholder="Price" />
+            <input type="number" name="price" placeholder="Price" />
 
             
 

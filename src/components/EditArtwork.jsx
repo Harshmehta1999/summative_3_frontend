@@ -3,6 +3,9 @@ import * as UTILS from "../utils";
 import { navigate } from "@reach/router";
 import Axios from "axios";
 import CategorySelector from "./CategorySelector";
+import TopNav from "./TopNav";
+import SubNav from "./SubNav"
+import "../css/image.css"
 
 export default class EditArtwork extends Component {
   constructor(props) {
@@ -11,73 +14,87 @@ export default class EditArtwork extends Component {
     this.myRef = React.createRef();
   }
 
-  onCategoryUpdated = (e) => {
+  onCategoryUpdated = e => {
     this.setState({ cat_id: e.target.value });
   };
 
-  GoToUserArtwork = (e) => {
+  GoToUserArtwork = e => {
     navigate(`/user-artworks`);
   };
 
   componentDidMount() {
-    Axios.get(`${UTILS.edit_artwork}/${this.props.id}`).then((res) => {
+    Axios.get(`${UTILS.edit_artwork}/${this.props.id}`).then(res => {
       this.setState({ artworks: res.data[0], isLoaded: true });
     });
   }
 
-  EditProduct = (e) => {
+  EditProduct = e => {
     e.preventDefault();
     var formData = new FormData(this.myRef.current);
     var settings = {
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: { "Content-Type": "multipart/form-data" }
     };
     Axios.put(
       `${UTILS.edit_artwork}/${this.props.id}`,
       formData,
       settings
     ).then(
-      (res) => {
+      res => {
         console.log(res);
       },
-      (error) => {
+      error => {
         console.log(this.props.id);
       }
     );
   };
 
   render() {
-    let { image, artwork_title, price } = this.state.artworks;
+    let { image, artwork_title, price, product_description } = this.state.artworks;
 
     return (
       <React.Fragment>
+        <TopNav />
+        <SubNav />
         <div>
-          <h2>Edit Item</h2>
+          <span>EDIT LISTING</span>
           <form onSubmit={this.EditProduct} ref={this.myRef}>
+            <CategorySelector onCategoryUpdated={this.onCategoryUpdated} />
             <input
               type="text"
               placeholder="Title"
               name="artwork_title"
               defaultValue={artwork_title}
             ></input>
+
+
             <input
-              type="text"
+              type="number"
               placeholder="Price"
               name="price"
               defaultValue={price}
             ></input>
 
+              <textarea
+              type="textarea"
+              name="product_description"
+              placeholder="Product Description"
+
+              defaultValue={product_description}
+              rows="5"
+            />
+
             <input type="hidden" name="cat_id" value={this.state.cat_id} />
 
-            <CategorySelector onCategoryUpdated={this.onCategoryUpdated} />
-
             <div>
+              <div className="image-wrap">
               <figure>
                 <img
+                  className="individual-image"
                   src={`http://localhost:9000/${image}`}
                   width="150px"
-                  height="150px"
+                  height="250px"
                 />
-              </figure>
+              </figure></div>
               <input
                 type="file"
                 name="image"
@@ -86,9 +103,15 @@ export default class EditArtwork extends Component {
               ></input>
             </div>
 
-            <button type="submit" onClick={this.GoToUserArtwork}>
-              Update Artwork
-            </button>
+            <div className="submit">
+              <button
+                className="submit-button"
+                type="submit"
+                onClick={this.GoToUserArtwork}
+              >
+                DONE
+              </button>
+            </div>
           </form>
         </div>
       </React.Fragment>

@@ -10,6 +10,7 @@ import "../css/categories.css";
 export default class UserArtwoks extends Component {
   constructor(props) {
     super(props);
+
     let u = window.localStorage.getItem("user") || "User name";
     this.state = { artworks: [],
       data: "",
@@ -35,7 +36,8 @@ export default class UserArtwoks extends Component {
       <React.Fragment>
         <SubNav />
         <TopNav />
-        <span>{this.state.user}</span>
+
+        <span className="user-name">{this.state.user}</span>
 
         <div className="container">
         {this.state.artworks.map((artworks, i) => {

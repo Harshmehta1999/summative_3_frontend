@@ -6,10 +6,25 @@
 
 .image {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 img {
     width: 90vw;
+}
+
+.artwork-page {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .artist-info {
@@ -64,8 +79,9 @@ h6 {
 
 
 
-.comment-button {
-    width: 50vw;
+.comment-button, .remove-bttn, .edit-bttn {
+    width: 45vw;
+    margin: 5px;
     margin-top: 10px;
     padding: 10px;
     background-color: #5CC7F7;

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import * as UTILS from "../utils";
 import { navigate } from "@reach/router";
 import Axios from "axios";
+import SubNav from "./SubNav";
+import TopNav from "./TopNav";
+import "../css/individualartwork.css"
 
 export default class UserArtworkInfo extends Component {
   constructor(props) {
@@ -36,27 +39,56 @@ export default class UserArtworkInfo extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
+
+
+        <TopNav />
+        <SubNav />
+        <div className="artwork-page">
           {this.state.artworks.map((artwork, i) => {
             return (
               <React.Fragment key={i}>
-                <h2>{artwork.title}</h2>
 
-                <div>
-                  <h3>Price: {artwork.price}</h3>
-                  <h3>Artwork title = {artwork.artwork_title}</h3>
-                  <img
-                    src={`http://localhost:9000/${artwork.image}`}
-                    alt="img"
-                  />
+
+<div className="info-container">
+                  <div className="image">
+                    <img
+                      src={`http://localhost:9000/${artwork.image}`}
+                      alt="img"
+                      // onClick={this.productDisplay}
+                    />
+                  </div>
+                  <div className="artist-info">
+                    <h6 className="artwork-title">{artwork.artwork_title}</h6>
+                    <div className="artwork-subtitle">
+                      {artwork.artwork_subtitle}
+                    </div>
+                    <p className="artwork-price">${artwork.price}</p>
+                  </div>
+          
+                
+                
+          <div className="product">
+            {this.state.artworks.map((artwork, i) => {
+              return (
+                <div className="description">
+                  <p className="description-title">PRODUCT DESCRIPTION</p>
+                  <p className="artwork-description">
+                    {artwork.product_description}
+                  </p>
                 </div>
+              );
+            })}
+          </div>
 
-                <div>
-                  <button _id={artwork._id} onClick={this.removeArtwork}>
-                    Delete
+
+          <div className="buttons">
+                  <button _id={artwork._id} onClick={this.removeArtwork} className="remove-bttn">
+                    REMOVE LISTING
                   </button>
-                  <button onClick={this.gotoEdit}>Edit</button>
-                </div>
+                  <button onClick={this.gotoEdit} className="edit-bttn">EDIT LISTING</button>
+                </div>  
+                
+                 </div>
               </React.Fragment>
             );
           })}
