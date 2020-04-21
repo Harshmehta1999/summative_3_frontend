@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import Axios from "axios";
 import { navigate } from "@reach/router";
+import "../css/categories.css"
 
 export default class UserArtworkButton extends Component {
   constructor(props) {
@@ -15,9 +16,9 @@ export default class UserArtworkButton extends Component {
 
   render() {
     return (
-      <button onClick={this.getArtworkInfo}>
+      <h6 onClick={this.getArtworkInfo}>
       {this.props.artwork_title}
-      </button>
+      </h6>
     );
   }
 }

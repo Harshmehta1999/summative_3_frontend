@@ -13,8 +13,13 @@ import AddToCartButton from "./AddToCartButton";
 export default class IndividualArtwork extends Component {
   constructor(props) {
     super(props);
+
+    let u = window.localStorage.getItem("user") || "User name";
+    
     this.formRef = React.createRef();
-    this.state = { artworks: [] };
+    this.state = { artworks: [],
+      data: "",
+      user: u };
   }
 
   componentDidMount() {
@@ -47,6 +52,9 @@ export default class IndividualArtwork extends Component {
       <React.Fragment>
         <TopNav />
         <SubNav />
+
+        <span className="user-name">{this.state.user}</span>
+
         <div>
           <div className="artist-page">
             {this.state.artworks.map((artwork, i) => {

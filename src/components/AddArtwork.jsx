@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-// import { navigate } from "@reach/router";
+import { navigate } from "@reach/router";
 import * as UTILS from "../utils";
 import CategorySelector from "./CategorySelector";
 import SubNav from "./SubNav";
@@ -37,6 +37,10 @@ export default class AddArtwork extends Component {
     this.setState({ cat_id: e.target.value });
   };
 
+  goListings = (e) => {
+    navigate(`/user-artworks`);
+  }
+
   render() {
     return (
       <React.Fragment>        
@@ -49,13 +53,11 @@ export default class AddArtwork extends Component {
           <form onSubmit={this.AddArtwork} ref={this.formRef}>
             <CategorySelector onCategoryUpdated={this.onCategoryUpdated} />
 
-            {/* <label>ARTWORK TITLE</label> */}
+          
             <input type="text" name="artwork_title" placeholder="Title" />
-            {/* 
-          <label>Artwork Subtitle</label> */}
+         
             <input type="text" name="artwork_subtitle" placeholder="Subtitle" />
-            {/* 
-          <label>Price</label> */}
+  
             <input type="number" name="price" placeholder="Price" />
 
             
@@ -72,7 +74,7 @@ export default class AddArtwork extends Component {
             <input type="hidden" name="cat_id" value={this.state.cat_id} />
 
             <div className="submit">
-              <Button className="submit-button" type="submit">
+              <Button className="submit-button" type="submit" onClick={this.goListings}>
                 LIST ITEM
               </Button>
             </div>

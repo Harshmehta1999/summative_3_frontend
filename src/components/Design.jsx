@@ -8,7 +8,7 @@ import TopNav from "./TopNav";
 import "../css/categories.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-import Image from "../images/artist.jpg"
+import Image from "../images/artist.jpg";
 
 export default class Design extends Component {
   constructor(props) {
@@ -33,7 +33,6 @@ export default class Design extends Component {
     });
   }
 
-
   render() {
     return (
       <React.Fragment>
@@ -41,27 +40,29 @@ export default class Design extends Component {
         <SubNav />
         <span>DESIGNS</span>
 
-
-            <div className="container">
-            {this.state.design.map((design, i) => {
-                 return (
-               
-             
-                     <div className="card">
-                       <div className="card-img-top-box wrap">
-                       <img src={`http://localhost:9000/${design.image}`} className="card-img-top" />
-                       </div><div className="card-body">
-                       <DesignButton className="card-title" design_title={design.artwork_title} id={design.id} />
-                         <h6 className="card-subtitle">{design.artwork_subtitle}</h6>
-                         <p className="card-price">${design.price}</p>
-   
-                       </div>
-                     </div>
-                  
-                 );
-               })}
-               </div>
-
+        <div className="container">
+          {this.state.design.map((design, i) => {
+            return (
+              <div className="card">
+                <div className="card-img-top-box wrap">
+                  <img
+                    src={`http://localhost:9000/${design.image}`}
+                    className="card-img-top"
+                  />
+                </div>
+                <div className="card-body">
+                  <DesignButton
+                    className="card-title"
+                    design_title={design.artwork_title}
+                    id={design.id}
+                  />
+                  <h6 className="card-subtitle">{design.artwork_subtitle}</h6>
+                  <p className="card-price">${design.price}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </React.Fragment>
     );
   }

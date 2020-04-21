@@ -35,6 +35,7 @@ export default class SignupPage extends Component {
     localStorage.setItem("phone", e.target.value);
   };
 
+
   PasswordChange = (e) => {
     this.setState({ Password: e.target.value });
     localStorage.setItem("password", e.target.value);
@@ -83,7 +84,7 @@ export default class SignupPage extends Component {
     if (isValid) {
       console.log(this.state);
       this.setState(initialState);
-      navigate("/profile-page");
+      navigate(`/menu`);
     }
   };
 

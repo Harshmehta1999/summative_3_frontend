@@ -18,12 +18,12 @@ export default class TopNav extends Component {
           <img src={leftArrow} alt="search" className="arrow-top" />
           <h3> </h3>
           <div className="search-wrapper">
-            <img
+            {/* <img
               src={search}
               onClick={this.goSearch}
               alt="search-bar"
               className="search-bar"
-            />
+            /> */}
           </div>
         </div>
       </React.Fragment>

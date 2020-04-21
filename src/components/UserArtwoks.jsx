@@ -6,6 +6,7 @@ import UserArtworkButton from "./UserArtworkButton";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
 import "../css/categories.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default class UserArtwoks extends Component {
   constructor(props) {
@@ -50,13 +51,13 @@ export default class UserArtwoks extends Component {
                 />
               </div>
               <div className="card-body">
-                <UserArtworkButton
+             <UserArtworkButton
                   className="card-title"
-                  artworks_title={artworks.artwork_title}
+                  artwork_title={artworks.artwork_title}
                   id={artworks.id}
-                />
-                <h6 className="card-subtitle">{artworks.artwork_subtitle}</h6>
-                // <p className="card-price">${artworks.price}</p>
+     /> 
+               <h6 className="card-subtitle">{artworks.artwork_subtitle}</h6>
+                <p className="card-price">${artworks.price}</p>
               </div>
             </div>
           );

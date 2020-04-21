@@ -32,7 +32,7 @@
     flex-flow: wrap;
 }
 
-.card-subtitle, .card-price, .card-title, h6 {
+.card-subtitle, .card-price, .card-title {
     font-family: Arial, Helvetica, sans-serif;
     text-align: inherit;
     letter-spacing: 0.02rem;
