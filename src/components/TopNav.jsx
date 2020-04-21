@@ -11,11 +11,15 @@ export default class TopNav extends Component {
     navigate(`/search`);
   };
 
+  goBack = e => {
+    navigate(-1);
+  }
+
   render() {
     return (
       <React.Fragment>
         <div className="top-nav">
-          <img src={leftArrow} alt="search" className="arrow-top" />
+          <img src={leftArrow} alt="search" className="arrow-top" onClick={this.goBack} />
           <h3> </h3>
           <div className="search-wrapper">
             {/* <img
