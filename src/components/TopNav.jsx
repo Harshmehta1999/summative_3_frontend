@@ -8,7 +8,7 @@ export default class TopNav extends Component {
   componentDidMount() {}
 
   goBack = (e) => {
-    alert(123);
+    // go back one in the history stack
     navigate(-1);
   };
 
