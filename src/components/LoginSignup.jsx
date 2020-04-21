@@ -10,10 +10,14 @@ export default class LoginSignup extends Component {
   signuppage = e => {
     navigate(`/signuppage`);
   };
+
+
   render() {
     return (
+    <div className="back-ground">  
       <div className="homepage">
-        <div className="header">CREATIVE CORNER</div>
+        <div className="header">THE CREATIVE CORNER</div>      
+        </div>
         <div className="button-login">
           <button className="login-bttn" onClick={this.loginpage}>
             LOG IN
@@ -25,7 +29,7 @@ export default class LoginSignup extends Component {
             SIGN UP
           </button>
         </div>
-      </div>
+</div>
     );
   }
 }

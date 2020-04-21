@@ -115,8 +115,9 @@ export default class SignupPage extends Component {
   render() {
     return (
       <React.Fragment>
+        <div className="back-ground">
         <div className="signup-info">
-          <div className="header">CREATIVE CORNER</div>
+          <div className="header">THE CREATIVE CORNER</div>
 
           <form onSubmit={this.onSubmit}>
             <input
@@ -151,15 +152,16 @@ export default class SignupPage extends Component {
               onChange={this.PasswordChange}
             ></input>
             <div>{this.state.PasswordError}</div>
-
+<div className="button-login">
             <button className="signup-bttn" type="submit">
               SIGN UP
             </button>
 
             <button className="signup-bttn" type="submit" onClick={this.goBack}>
               GO BACK
-            </button>
+            </button></div>
           </form>
+        </div>
         </div>
       </React.Fragment>
     );
