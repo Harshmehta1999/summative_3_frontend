@@ -50,10 +50,10 @@ export default class IndividualArtwork extends Component {
   render() {
     return (
       <React.Fragment>
-        <TopNav />
+        <TopNav title={this.state.user}/>
         <SubNav />
-
-        <span className="user-name">{this.state.user}</span>
+{/* 
+        <span className="user-name">{this.state.user}</span> */}
 
         <div>
           <div className="artist-page">

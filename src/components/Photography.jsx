@@ -29,10 +29,10 @@ export default class Photography extends Component {
   render() {
     return (
       <React.Fragment>
-        <TopNav />
+        <TopNav title="PHOTOGRAPHY" />
         <SubNav />
 
-        <span>PHOTOGRAPHY</span>
+        {/* <span>PHOTOGRAPHY</span> */}
 
         <div className="container">
           {this.state.photography.map((photography, i) => {

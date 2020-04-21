@@ -7,7 +7,12 @@ import "../css/topnav.css";
 export default class TopNav extends Component {
   componentDidMount() {}
 
-  goSearch = e => {
+  goBack = (e) => {
+    // go back one in the history stack
+    navigate(-1);
+  };
+
+  goSearch = (e) => {
     navigate(`/search`);
   };
 
@@ -19,8 +24,14 @@ export default class TopNav extends Component {
     return (
       <React.Fragment>
         <div className="top-nav">
-          <img src={leftArrow} alt="search" className="arrow-top" onClick={this.goBack} />
-          <h3> </h3>
+          <h3 className="top-nav-title">{this.props.title}</h3>
+          <img
+            src={leftArrow}
+            alt="search"
+            className="arrow-top"
+            onClick={this.goBack}
+          />
+
           <div className="search-wrapper">
             {/* <img
               src={search}

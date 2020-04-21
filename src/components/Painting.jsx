@@ -33,10 +33,10 @@ export default class Painting extends Component {
   render() {
     return (
       <React.Fragment>
-        <TopNav />
+        <TopNav title="PAINTINGS" />
         <SubNav />
 
-        <span>PAINTINGS</span>
+        {/* <span>PAINTINGS</span> */}
 
 
 <div className="container">

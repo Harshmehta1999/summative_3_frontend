@@ -36,9 +36,9 @@ export default class UserArtwoks extends Component {
     return (
       <React.Fragment>
         <SubNav />
-        <TopNav />
+        <TopNav title={this.state.user}/>
 
-        <span className="user-name">{this.state.user}</span>
+        {/* <span className="user-name">{this.state.user}</span> */}
 
         <div className="container">
         {this.state.artworks.map((artworks, i) => {

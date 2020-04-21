@@ -44,10 +44,10 @@ export default class AddArtwork extends Component {
   render() {
     return (
       <React.Fragment>        
-        <TopNav />
+        <TopNav title="ADD PRODUCT" />
 
 
-        <span>ADD PRODUCT</span>
+        {/* <span>ADD PRODUCT</span> */}
 
         <div className="form-wrapper">
           <form onSubmit={this.AddArtwork} ref={this.formRef}>

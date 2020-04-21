@@ -60,10 +60,10 @@ export default class EditUserProfile extends Component {
   render() {
     return (
       <React.Fragment>
-          <TopNav />
+          <TopNav title="EDIT PROFILE" />
           <SubNav />
         <div className="edit-profile">
-          <span>EDIT PROFILE</span>
+          {/* <span>EDIT PROFILE</span> */}
 
           <form className="edit-form" onSubmit={this.onSubmit}>
          

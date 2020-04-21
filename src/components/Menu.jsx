@@ -26,9 +26,9 @@ export default class Menu extends Component {
   render() {
     return (
       <React.Fragment>
-        <TopNav />
+        <TopNav title="CATEGORIES" />
         <SubNav />
-<span>CATEGORIES</span>
+{/* <span>CATEGORIES</span> */}
         <div className="menu-nav">
             <button onClick={this.goDesigns} className="design bttn">DESIGN</button>
             <button onClick={this.goIllustration} className="illustration bttn">ILLUSTRATION</button>

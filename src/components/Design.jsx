@@ -36,9 +36,9 @@ export default class Design extends Component {
   render() {
     return (
       <React.Fragment>
-        <TopNav />
+        <TopNav title="DESIGN" />
         <SubNav />
-        <span>DESIGNS</span>
+        {/* <span>DESIGNS</span> */}
 
         <div className="container">
           {this.state.design.map((design, i) => {
