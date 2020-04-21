@@ -4,8 +4,8 @@ import { navigate } from "@reach/router";
 import Axios from "axios";
 import CategorySelector from "./CategorySelector";
 import TopNav from "./TopNav";
-import SubNav from "./SubNav"
-import "../css/image.css"
+import SubNav from "./SubNav";
+import "../css/image.css";
 
 export default class EditArtwork extends Component {
   constructor(props) {
@@ -14,42 +14,48 @@ export default class EditArtwork extends Component {
     this.myRef = React.createRef();
   }
 
-  onCategoryUpdated = e => {
+  onCategoryUpdated = (e) => {
     this.setState({ cat_id: e.target.value });
   };
 
-  GoToUserArtwork = e => {
+  GoToUserArtwork = (e) => {
     navigate(`/user-artworks`);
   };
 
   componentDidMount() {
-    Axios.get(`${UTILS.edit_artwork}/${this.props.id}`).then(res => {
+    Axios.get(`${UTILS.edit_artwork}/${this.props.id}`).then((res) => {
       this.setState({ artworks: res.data[0], isLoaded: true });
     });
   }
 
-  EditProduct = e => {
+  EditProduct = (e) => {
     e.preventDefault();
     var formData = new FormData(this.myRef.current);
     var settings = {
-      headers: { "Content-Type": "multipart/form-data" }
+      headers: { "Content-Type": "multipart/form-data" },
     };
     Axios.put(
       `${UTILS.edit_artwork}/${this.props.id}`,
       formData,
       settings
     ).then(
-      res => {
+      (res) => {
         console.log(res);
+        this.GoToUserArtwork();
       },
-      error => {
+      (error) => {
         console.log(this.props.id);
       }
     );
   };
 
   render() {
-    let { image, artwork_title, price, product_description } = this.state.artworks;
+    let {
+      image,
+      artwork_title,
+      price,
+      product_description,
+    } = this.state.artworks;
 
     return (
       <React.Fragment>
@@ -66,7 +72,6 @@ export default class EditArtwork extends Component {
               defaultValue={artwork_title}
             ></input>
 
-
             <input
               type="number"
               placeholder="Price"
@@ -74,11 +79,10 @@ export default class EditArtwork extends Component {
               defaultValue={price}
             ></input>
 
-              <textarea
+            <textarea
               type="textarea"
               name="product_description"
               placeholder="Product Description"
-
               defaultValue={product_description}
               rows="5"
             />
@@ -87,14 +91,15 @@ export default class EditArtwork extends Component {
 
             <div>
               <div className="image-wrap">
-              <figure>
-                <img
-                  className="individual-image"
-                  src={`http://localhost:9000/${image}`}
-                  width="150px"
-                  height="250px"
-                />
-              </figure></div>
+                <figure>
+                  <img
+                    className="individual-image"
+                    src={`http://localhost:9000/${image}`}
+                    width="150px"
+                    height="250px"
+                  />
+                </figure>
+              </div>
               <input
                 type="file"
                 name="image"
@@ -104,11 +109,7 @@ export default class EditArtwork extends Component {
             </div>
 
             <div className="submit">
-              <button
-                className="submit-button"
-                type="submit"
-                onClick={this.GoToUserArtwork}
-              >
+              <button className="submit-button" type="submit">
                 DONE
               </button>
             </div>
