@@ -45,9 +45,9 @@ export default class App extends React.Component {
           <Menu path="/menu" />
           <Account path="/account" />
           <LoginSignup path="/loginpage" />
-          <SignupPage path="/signuppage"/>
-          <ProfileDetails path="/profile-page"/>
-          <EditUserProfile path="/edit-userprofile-page"/>
+          <SignupPage path="/signuppage" />
+          <ProfileDetails path="/profile-page" />
+          <EditUserProfile path="/edit-userprofile-page" />
           <AddArtwork path="/addartwork" />
           <Search path="/search" />
           <Cart path="/cart" />
@@ -58,8 +58,6 @@ export default class App extends React.Component {
           <LandingPage path="/creativecorner" />
           <TopNav path="/header" />
         </Router>
-
-
       </React.Fragment>
     );
   }

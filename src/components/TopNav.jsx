@@ -20,13 +20,14 @@ export default class TopNav extends Component {
     return (
       <React.Fragment>
         <div className="top-nav">
+          <h3 className="top-nav-title">{this.props.title}</h3>
           <img
             src={leftArrow}
             alt="search"
             className="arrow-top"
             onClick={this.goBack}
           />
-          <h3></h3>
+
           <div className="search-wrapper">
             {/* <img
               src={search}

@@ -19,7 +19,7 @@ export default class Illustration extends Component {
   // };
 
   componentDidMount() {
-    Axios.get(UTILS.category_illustration_url).then(res => {
+    Axios.get(UTILS.category_illustration_url).then((res) => {
       if (res.data.result === false) {
         this.setState({ result: false });
       } else {
@@ -32,10 +32,10 @@ export default class Illustration extends Component {
   render() {
     return (
       <React.Fragment>
-        <TopNav />
+        <TopNav title="ILLUSTRATION" />
         <SubNav />
 
-        <span>ILLUSTRATION</span>
+        {/* <span>ILLUSTRATION</span> */}
 
         <div className="container">
           {this.state.illustration.map((illustration, i) => {
