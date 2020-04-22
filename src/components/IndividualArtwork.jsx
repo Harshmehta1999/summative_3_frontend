@@ -11,7 +11,8 @@ export default class IndividualArtwork extends Component {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
-    this.state = { artworks: [] };
+    this.state = { artworks: [],comments: [], };
+    this.commentsField = React.createRef();
   }
 
   componentDidMount() {
@@ -26,17 +27,21 @@ export default class IndividualArtwork extends Component {
     );
   }
 
-  AddToCart = (e) => {
-    navigate(`/cart`);
-  };
+  addComment = (e) => {
+    let comment = this.commentsField.current.value;
+    let id = this.state.artworks[0].id;
 
-  AddComment = (e) => {
-    e.preventDefault();
-    alert("submitted");
-    var formData = new FormData(this.formRef.current);
-    Axios.post(UTILS.add_comment, formData).then((res) => {
-      console.log(res);
-    });
+    Axios.post(`${UTILS.add_comment}`, {
+      comment: comment,
+      id: id,
+    }).then(
+      (res) => {
+        console.log(res);
+      },
+      (error) => {
+        console.log("error for ", this.props.id);
+      }
+    );
   };
 
   render() {
@@ -69,20 +74,17 @@ export default class IndividualArtwork extends Component {
         })}
 
         <div>
-          <form onSubmit={this.AddComment} ref={this.formRef}>
-            <textarea
-              type="text"
-              name="comment"
-              placeholder="add comment"
-            ></textarea>
-            <Button
-              type="submit"
-              design_title={this.props.artwork_title}
-              id={this.props.id}
-            >
-              Submit
-            </Button>
-          </form>
+          <h3>Leave a comment</h3>
+
+          <input type="textarea" ref={this.commentsField}></input>
+
+          <button onClick={this.addComment}>Send</button>
+
+          <div className="comment">
+            {this.state.comments.map((comment, i) => {
+              return <p key={i}>{comment.comment}</p>;
+            })}
+          </div>
         </div>
       </div>
     );
