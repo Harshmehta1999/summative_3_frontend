@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { navigate } from "@reach/router";
+import "../css/edituserprofile.css";
+import SubNav from "./SubNav";
+import TopNav from "./TopNav";
 
 export default class EditUserProfile extends Component {
   constructor(props) {
@@ -8,12 +11,12 @@ export default class EditUserProfile extends Component {
     this.state = {
       User: "",
       Email: "",
-      Phone: "",
+      Phone: ""
     };
   }
 
   BackToProfile = (e) => {
-    navigate("/profile-page");
+    navigate("/account");
   };
 
   onChangeUser = (e) => {
@@ -57,9 +60,13 @@ export default class EditUserProfile extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
-          <h2>Edit Profile</h2>
-          <form onSubmit={this.onSubmit}>
+          <TopNav title="EDIT PROFILE" />
+          <SubNav />
+        <div className="edit-profile">
+          {/* <span>EDIT PROFILE</span> */}
+
+          <form className="edit-form" onSubmit={this.onSubmit}>
+         
             <input
               type="text"
               placeholder="User"
@@ -78,11 +85,16 @@ export default class EditUserProfile extends Component {
               value={this.state.Phone}
               onChange={this.onChangePhone}
             ></input>
-       
 
-            <button type="submit" onClick={this.BackToProfile}>
-              Sign up
-            </button>
+            <div className="submit">
+              <button
+                className="submit-button"
+                type="submit"
+                onClick={this.BackToProfile}
+              >
+                DONE
+              </button>
+            </div>
           </form>
         </div>
       </React.Fragment>

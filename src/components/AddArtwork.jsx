@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-import Axios from "axios";
 import { navigate } from "@reach/router";
 import * as UTILS from "../utils";
 import CategorySelector from "./CategorySelector";
+import SubNav from "./SubNav";
+import TopNav from "./TopNav";
+import "../css/addartwork.css";
+import Axios from "axios";
 
 export default class AddArtwork extends Component {
   constructor(props) {
@@ -34,30 +37,51 @@ export default class AddArtwork extends Component {
     this.setState({ cat_id: e.target.value });
   };
 
+  goListings = (e) => {
+    navigate(`/user-artworks`);
+  }
+
   render() {
     return (
-      <div className="form-wrapper">
-        <form onSubmit={this.AddArtwork} ref={this.formRef}>
-          <CategorySelector onCategoryUpdated={this.onCategoryUpdated} />
-          <label>Artwork Title</label>
-          <input type="text" name="artwork_title" placeholder="title" />
+      <React.Fragment>        
+        <TopNav title="ADD PRODUCT" />
 
-          <label>Artwork Subtitle</label>
-          <input type="text" name="artwork_subtitle" placeholder="subtitle" />
 
-          <label>Price</label>
-          <input type="text" name="price" placeholder="price" />
-          <input type="file" name="image"></input>
-          {/* <input type="text" name="image" placeholder="price" /> */}
+        {/* <span>ADD PRODUCT</span> */}
 
-          <input id="id" type="hidden" name="id" value={this.state.id} />
+        <div className="form-wrapper">
+          <form onSubmit={this.AddArtwork} ref={this.formRef}>
+            <CategorySelector onCategoryUpdated={this.onCategoryUpdated} />
 
-          <input type="hidden" name="cat_id" value={this.state.cat_id} />
-          {/* <input type="hidden" name="artwork_title" value={this.state.artwork_title} /> */}
+          
+            <input type="text" name="artwork_title" placeholder="Title" />
+         
+            <input type="text" name="artwork_subtitle" placeholder="Subtitle" />
+  
+            <input type="number" name="price" placeholder="Price" />
 
-          <button>Add Item</button>
-        </form>
-      </div>
+            
+
+            <textarea
+              type="textarea"
+              name="product_description"
+              placeholder="Product Description"
+              rows="5"
+            />
+
+<input type="file" name="image"></input>
+
+            <input type="hidden" name="cat_id" value={this.state.cat_id} />
+
+            <div className="submit">
+              <Button className="submit-button" type="submit" onClick={this.goListings}>
+                LIST ITEM
+              </Button>
+            </div>
+          </form>
+        </div>
+        <SubNav />
+      </React.Fragment>
     );
   }
 }

@@ -1,0 +1,16 @@
+
+
+.heading {
+    position: sticky;
+    padding: 80px;
+    border-bottom: 1px solid #CECECE;
+    /* background-image: url(../images/photography_back.jpg); */
+}
+
+
+h2 {
+    text-align: center;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}

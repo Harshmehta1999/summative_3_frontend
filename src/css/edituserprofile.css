@@ -1,0 +1,53 @@
+.submit-bttn, .submit-button, .user-bttn {
+    width: 50vw;
+    padding: 10px;
+    background-color: #5CC7F7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    font-size: 0.9rem;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.info, label {
+    text-align: center;
+    letter-spacing: 0.03rem;
+    font-size: 0.9rem;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    border: 1px solid #D1C7C7;
+    letter-spacing: 0.01rem;
+    font-size: 0.9rem;
+    color: #555555;
+    padding: 15px;
+    display: flex;
+    width: 90vw;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    justify-content: center
+}
+
+.info {
+    margin-top: 20px;
+}
+
+
+.edit-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}

@@ -1,10 +1,9 @@
 import * as React from "react";
-import { Link } from "@reach/router";
-import * as UTILS from "../src/utils";
-import Axios from "axios";
+// import { Link } from "@reach/router";
+// import * as UTILS from "../src/utils";
+// import Axios from "axios";
 import AddArtwork from "./components/AddArtwork";
-import CategorySelector from "./components/CategorySelector";
-import GlobalNav from "./components/GlobalNav";
+// import CategorySelector from "./components/CategorySelector";
 import { Router } from "@reach/router";
 import Design from "./components/Design";
 import Home from "./components/Home";
@@ -12,9 +11,15 @@ import Illustration from "./components/Illustration";
 import IndividualArtwork from "./components/IndividualArtwork";
 import Photography from "./components/Photography";
 import Painting from "./components/Painting";
+import SubNav from "./components/SubNav";
+import Menu from "./components/Menu";
+import TopNav from "./components/TopNav";
+import Account from "./components/Account";
+import LandingPage from "./components/LandingPage";
+import Search from "./components/Search";
 import LoginSignup from "./components/LoginSignup";
 import SignupPage from "./components/SignupPage";
-import Profile from "./components/Profile";
+import ProfileDetails from "./components/Profile";
 import EditUserProfile from "./components/EditUserProfile";
 import Cart from "./components/Cart";
 import UserArtwoks from "./components/UserArtwoks";
@@ -36,14 +41,22 @@ export default class App extends React.Component {
           <Photography path="/photographs" />
           <Painting path="/paintings" />
           <IndividualArtwork path="/IndividualArtwork/:id" />
+          <SubNav path="/subnav" />
+          <Menu path="/menu" />
+          <Account path="/account" />
           <LoginSignup path="/loginpage" />
           <SignupPage path="/signuppage" />
-          <Profile path="/profile-page" />
+          <ProfileDetails path="/profile-page" />
           <EditUserProfile path="/edit-userprofile-page" />
+          <AddArtwork path="/addartwork" />
+          <Search path="/search" />
           <Cart path="/cart" />
           <UserArtwoks path="/user-artworks" />
           <UserArtworkInfo path="/UserArtworkInfo/:id" />
           <EditArtwork path="/edit-details/:id" />
+
+          <LandingPage path="/creativecorner" />
+          <TopNav path="/header" />
         </Router>
       </React.Fragment>
     );

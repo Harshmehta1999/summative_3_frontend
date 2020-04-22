@@ -1,17 +1,23 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import { navigate } from "@reach/router";
+// import { navigate } from "@reach/router";
+import SubNav from "./SubNav";
+import TopNav from "./TopNav";
+import "../css/individualartwork.css";
+
 import { Button } from "reactstrap";
-import { Link } from "@reach/router";
 import * as UTILS from "../utils";
-import CommentButton from "./CommentButton";
+// import CommentButton from "./CommentButton";
 import AddToCartButton from "./AddToCartButton";
 
 export default class IndividualArtwork extends Component {
   constructor(props) {
     super(props);
+
+    let u = window.localStorage.getItem("user") || "User name";
+
     this.formRef = React.createRef();
-    this.state = { artworks: [],comments: [], };
+    this.state = { artworks: [], data: "", comments: [], user: u };
     this.commentsField = React.createRef();
   }
 
@@ -19,7 +25,7 @@ export default class IndividualArtwork extends Component {
     Axios.get(`http://localhost:9000/api/artworks/${this.props.id}`).then(
       (res) => {
         console.log(res.data);
-        this.setState({ artworks: res.data });
+        this.setState({ artworks: res.data, comments: res.data[0].comments });
       },
       (error) => {
         console.log("error = ", error);
@@ -27,9 +33,10 @@ export default class IndividualArtwork extends Component {
     );
   }
 
-  addComment = (e) => {
+  addComments = (e) => {
     let comment = this.commentsField.current.value;
-    let id = this.state.artworks[0].id;
+
+    let id = this.state.items[0].id;
 
     Axios.post(`${UTILS.add_comment}`, {
       comment: comment,
@@ -46,47 +53,67 @@ export default class IndividualArtwork extends Component {
 
   render() {
     return (
-      <div>
-        <h2>helloss</h2>
+      <React.Fragment>
+        <TopNav title={this.state.user} />
+        <SubNav />
+        {/* 
+        <span className="user-name">{this.state.user}</span> */}
 
-        {this.state.artworks.map((artwork, i) => {
-          return (
-            <div>
-              <h2>
-                artwork Title = {artwork.artwork_title}
-                <br></br>artwork subtitle = {artwork.artwork_subtitle}
-                <br></br>artworks price = {artwork.price}
-                <br></br>{" "}
-                <img src={`http://localhost:9000/${artwork.image}`} alt="img" />
-              </h2>
-              {this.state.artworks.map((artworks, i) => {
-                return (
-                  <li>
-                    <AddToCartButton
-                      artworks_title={artworks.artwork_title}
-                      id={artworks.id}
+        <div>
+          <div className="artist-page">
+            {this.state.artworks.map((artwork, i) => {
+              return (
+                <div className="info-container">
+                  {" "}
+                  <div className="image">
+                    <img
+                      src={`http://localhost:9000/${artwork.image}`}
+                      alt="img"
+                      // onClick={this.productDisplay}
                     />
-                  </li>
+                  </div>
+                  <div className="artist-info">
+                    <h6 className="artwork-title">{artwork.artwork_title}</h6>
+                    <div className="artwork-subtitle">
+                      {artwork.artwork_subtitle}
+                    </div>
+                    <p className="artwork-price">${artwork.price}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="product">
+            {this.state.artworks.map((artwork, i) => {
+              return (
+                <div className="description">
+                  <p className="description-title">PRODUCT DESCRIPTION</p>
+                  <p className="artwork-description">
+                    {artwork.product_description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div>
+            <input type="textarea" ref={this.commentsField}></input>
+
+            <button onClick={this.addComments}>Send</button>
+
+            <div>
+              {this.state.comments.map((comment, i) => {
+                return (
+                  <p key={i} className="dark">
+                    {comment.comment}
+                  </p>
                 );
               })}
             </div>
-          );
-        })}
-
-        <div>
-          <h3>Leave a comment</h3>
-
-          <input type="textarea" ref={this.commentsField}></input>
-
-          <button onClick={this.addComment}>Send</button>
-
-          <div className="comment">
-            {this.state.comments.map((comment, i) => {
-              return <p key={i}>{comment.comment}</p>;
-            })}
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

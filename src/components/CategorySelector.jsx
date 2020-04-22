@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
+import SubNav from "./SubNav";
+import "../css/addartwork.css"
 
 export default class CategorySelector extends Component {
   constructor(props) {
@@ -23,7 +25,8 @@ export default class CategorySelector extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Select category</h1>
+        <SubNav />
+
         <div>
           <select id="lang" onChange={this.props.onCategoryUpdated}>
             {this.state.categories.map((category, i) => {

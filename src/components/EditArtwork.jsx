@@ -3,6 +3,9 @@ import * as UTILS from "../utils";
 import { navigate } from "@reach/router";
 import Axios from "axios";
 import CategorySelector from "./CategorySelector";
+import TopNav from "./TopNav";
+import SubNav from "./SubNav";
+import "../css/image.css";
 
 export default class EditArtwork extends Component {
   constructor(props) {
@@ -38,6 +41,7 @@ export default class EditArtwork extends Component {
     ).then(
       (res) => {
         console.log(res);
+        this.GoToUserArtwork();
       },
       (error) => {
         console.log(this.props.id);
@@ -46,38 +50,56 @@ export default class EditArtwork extends Component {
   };
 
   render() {
-    let { image, artwork_title, price } = this.state.artworks;
+    let {
+      image,
+      artwork_title,
+      price,
+      product_description,
+    } = this.state.artworks;
 
     return (
       <React.Fragment>
+        <TopNav />
+        <SubNav />
         <div>
-          <h2>Edit Item</h2>
+          <span>EDIT LISTING</span>
           <form onSubmit={this.EditProduct} ref={this.myRef}>
+            <CategorySelector onCategoryUpdated={this.onCategoryUpdated} />
             <input
               type="text"
               placeholder="Title"
               name="artwork_title"
               defaultValue={artwork_title}
             ></input>
+
             <input
-              type="text"
+              type="number"
               placeholder="Price"
               name="price"
               defaultValue={price}
             ></input>
 
+            <textarea
+              type="textarea"
+              name="product_description"
+              placeholder="Product Description"
+              defaultValue={product_description}
+              rows="5"
+            />
+
             <input type="hidden" name="cat_id" value={this.state.cat_id} />
 
-            <CategorySelector onCategoryUpdated={this.onCategoryUpdated} />
-
             <div>
-              <figure>
-                <img
-                  src={`http://localhost:9000/${image}`}
-                  width="150px"
-                  height="150px"
-                />
-              </figure>
+              <div className="image-wrap">
+                <figure>
+                  <img
+                    className="individual-image"
+                    src={`http://localhost:9000/${image}`}
+                    width="150px"
+                    height="250px"
+                  />
+                </figure>
+              </div>
               <input
                 type="file"
                 name="image"
@@ -86,9 +108,11 @@ export default class EditArtwork extends Component {
               ></input>
             </div>
 
-            <button type="submit" onClick={this.GoToUserArtwork}>
-              Update Artwork
-            </button>
+            <div className="submit">
+              <button className="submit-button" type="submit">
+                DONE
+              </button>
+            </div>
           </form>
         </div>
       </React.Fragment>

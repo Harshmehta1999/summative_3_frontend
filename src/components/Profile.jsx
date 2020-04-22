@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { navigate } from "@reach/router";
+import "../css/edituserprofile.css";
 
 export default class Profile extends Component {
   constructor() {
@@ -13,11 +14,11 @@ export default class Profile extends Component {
       data: "",
       user: u,
       email: e,
-      phone: p,
+      phone: p
     };
   }
 
-  gotoUserEdit = (e) => {
+  gotoUserEdit = e => {
     navigate("/edit-userprofile-page");
   };
 
@@ -25,15 +26,16 @@ export default class Profile extends Component {
     return (
       <React.Fragment>
         <div>
-          <div>
-            <div>
-              <h3>{this.state.user}</h3>
+            <div className="info">
+              <p>{this.state.user}</p>
               <p>{this.state.email}</p>
               <p>{this.state.phone}</p>
             </div>
-          </div>
 
-          <button onClick={this.gotoUserEdit}>Edit Profile</button>
+        <div className="submit">
+          <button onClick={this.gotoUserEdit} className="submit-button">
+            EDIT PROFILE
+          </button></div>
         </div>
       </React.Fragment>
     );

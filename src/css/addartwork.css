@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+input, select, textarea {
+    border: 1px solid #D1C7C7;
+    letter-spacing: 0.01rem;
+    font-size: 0.9rem;
+    padding: 15px;
+    display: flex;
+    width: 90vw;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.submit-bttn, .submit-button {
+    width: 50%;
+    padding: 10px;
+    background-color: #5CC7F7;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    font-size: 0.9rem;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

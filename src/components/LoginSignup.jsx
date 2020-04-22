@@ -1,26 +1,35 @@
 import React, { Component } from "react";
-
 import { navigate } from "@reach/router";
+import "../css/login_signup.css";
 
 export default class LoginSignup extends Component {
-
-    loginpage = (e) => {
-    navigate(`/`);
+  loginpage = e => {
+    navigate(`/menu`);
   };
 
-  signuppage = (e) => {
+  signuppage = e => {
     navigate(`/signuppage`);
-  }; 
+  };
+
+
   render() {
     return (
-      <div>
-
-        <h1>Logo</h1>
-        <button  onClick={this.loginpage}>Log in</button>
-        <button onClick={this.signuppage}>Sign up</button>
-      </div>
+    <div className="back-ground">  
+      <div className="homepage">
+        <div className="header">THE CREATIVE CORNER</div>      
+        </div>
+        <div className="button-login">
+          <button className="login-bttn" onClick={this.loginpage}>
+            LOG IN
+          </button>
+          <button
+            className="signup-bttn"
+            onClick={this.signuppage}
+          >
+            SIGN UP
+          </button>
+        </div>
+</div>
     );
   }
 }
-
-

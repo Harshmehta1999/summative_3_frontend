@@ -1,0 +1,20 @@
+.search-bttn {
+    width: 50%;
+    padding: 5px;
+    background-color:#CECECE;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    /* font-weight: bold; */
+
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { navigate } from "@reach/router";
+import "../css/login_signup.css";
 
 const initialState = {
   User: "",
@@ -33,6 +34,7 @@ export default class SignupPage extends Component {
     this.setState({ Phone: e.target.value });
     localStorage.setItem("phone", e.target.value);
   };
+
 
   PasswordChange = (e) => {
     this.setState({ Password: e.target.value });
@@ -82,7 +84,7 @@ export default class SignupPage extends Component {
     if (isValid) {
       console.log(this.state);
       this.setState(initialState);
-      navigate("/profile-page");
+      navigate(`/menu`);
     }
   };
 
@@ -106,10 +108,17 @@ export default class SignupPage extends Component {
     }
   }
 
+  goBack = e => {
+    navigate(`/loginpage`);
+  };
+
   render() {
     return (
       <React.Fragment>
-        <div>
+        <div className="back-ground">
+        <div className="signup-info">
+          <div className="header">THE CREATIVE CORNER</div>
+
           <form onSubmit={this.onSubmit}>
             <input
               type="text"
@@ -143,9 +152,16 @@ export default class SignupPage extends Component {
               onChange={this.PasswordChange}
             ></input>
             <div>{this.state.PasswordError}</div>
+<div className="button-login">
+            <button className="signup-bttn" type="submit">
+              SIGN UP
+            </button>
 
-            <button type="submit">Sign up</button>
+            <button className="signup-bttn" type="submit" onClick={this.goBack}>
+              GO BACK
+            </button></div>
           </form>
+        </div>
         </div>
       </React.Fragment>
     );

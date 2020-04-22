@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+
+
+
+.homepage {
+    margin-top: 65%;
+    margin-bottom: 41.5%;
+}
+
+.button-login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+
+.login-bttn, .signup-bttn {
+    width: 90vw;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #5CC7F7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    font-size: 0.9rem;
+
+}
+
+.header {
+    letter-spacing: 0.1rem;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.5rem;
+    color: grey;
+    text-align: center;
+    
+
+}
+
+.signup-info {
+margin-top: 40%;
+}

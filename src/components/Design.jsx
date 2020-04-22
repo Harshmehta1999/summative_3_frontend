@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-import GlobalNav from "./GlobalNav";
 import Axios from "axios";
 import * as UTILS from "../utils";
-import { navigate } from "@reach/router";
-import DesignButton from "./DesignButton";
+// import { navigate } from "@reach/router";
+import DesignButton from "../buttons/DesignButton";
+import SubNav from "./SubNav";
+import TopNav from "./TopNav";
+import "../css/categories.css";
+import "bootstrap/dist/css/bootstrap.css";
+
+import Image from "../images/artist.jpg";
 
 export default class Design extends Component {
   constructor(props) {
@@ -18,7 +23,7 @@ export default class Design extends Component {
   // };
 
   componentDidMount() {
-    Axios.get(UTILS.category_design_url).then((res) => {
+    Axios.get(UTILS.category_design_url).then(res => {
       if (res.data.result === false) {
         this.setState({ result: false });
       } else {
@@ -31,18 +36,33 @@ export default class Design extends Component {
   render() {
     return (
       <React.Fragment>
-        <GlobalNav />
+        <TopNav title="DESIGN" />
+        <SubNav />
+        {/* <span>DESIGNS</span> */}
 
-        {this.state.design.map((design, i) => {
-          return (
-            <li key={design.price}>
-              <DesignButton
-                design_title={design.artwork_title}
-                id={design.id}
-              />
-            </li>
-          );
-        })}
+        <div className="container">
+          {this.state.design.map((design, i) => {
+            return (
+              <div className="card">
+                <div className="card-img-top-box wrap">
+                  <img
+                    src={`http://localhost:9000/${design.image}`}
+                    className="card-img-top"
+                  />
+                </div>
+                <div className="card-body">
+                  <DesignButton
+                    className="card-title"
+                    design_title={design.artwork_title}
+                    id={design.id}
+                  />
+                  <h6 className="card-subtitle">{design.artwork_subtitle}</h6>
+                  <p className="card-price">${design.price}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </React.Fragment>
     );
   }

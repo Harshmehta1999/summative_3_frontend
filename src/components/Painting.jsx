@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import GlobalNav from "./GlobalNav";
 import Axios from "axios";
 import * as UTILS from "../utils";
-import { navigate } from "@reach/router";
-import PaintingButton from "./PaintingButton";
+// import { navigate } from "@reach/router";
+import PaintingButton from "../buttons/PaintingButton";
+import TopNav from "./TopNav";
+import SubNav from "./SubNav";
+
 
 export default class Painting extends Component {
   constructor(props) {
@@ -18,7 +20,7 @@ export default class Painting extends Component {
   // };
 
   componentDidMount() {
-    Axios.get(UTILS.category_painting_url).then((res) => {
+    Axios.get(UTILS.category_painting_url).then(res => {
       if (res.data.result === false) {
         this.setState({ result: false });
       } else {
@@ -31,18 +33,32 @@ export default class Painting extends Component {
   render() {
     return (
       <React.Fragment>
-        <GlobalNav />
+        <TopNav title="PAINTINGS" />
+        <SubNav />
 
-        {this.state.painting.map((painting, i) => {
-          return (
-            <li key={painting.price}>
-              <PaintingButton
-                painting_title={painting.artwork_title}
-                id={painting.id}
-              />
-            </li>
-          );
-        })}
+        {/* <span>PAINTINGS</span> */}
+
+
+<div className="container">
+            {this.state.painting.map((painting, i) => {
+                 return (
+               
+             
+                     <div className="card">
+                                              <div className="card-img-top-box wrap">
+                       <img src={`http://localhost:9000/${painting.image}`} class="card-img-top" />
+                       </div>
+                       <div className="card-body">
+                       <PaintingButton className="card-title" painting_title={painting.artwork_title} id={painting.id} />
+                         <h6 className="card-subtitle">{painting.artwork_subtitle}</h6>
+                         <p className="card-price">${painting.price}</p>
+   
+                         </div>
+                     </div>
+                  
+                 );
+               })}
+               </div>
       </React.Fragment>
     );
   }
