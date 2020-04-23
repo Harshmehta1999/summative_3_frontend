@@ -8,6 +8,9 @@ import TopNav from "./TopNav";
 import "../css/addartwork.css";
 import Axios from "axios";
 
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
+
 export default class AddArtwork extends Component {
   constructor(props) {
     super(props);
@@ -46,8 +49,6 @@ export default class AddArtwork extends Component {
       <React.Fragment>        
         <TopNav title="ADD PRODUCT" />
 
-
-        {/* <span>ADD PRODUCT</span> */}
 
         <div className="form-wrapper">
           <form onSubmit={this.AddArtwork} ref={this.formRef}>

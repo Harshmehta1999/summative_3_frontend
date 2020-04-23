@@ -6,6 +6,8 @@ import PaintingButton from "../buttons/PaintingButton";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
 
+// Page set up by Harsh
+// Data being called from server and events done by Harsh
 
 export default class Painting extends Component {
   constructor(props) {
@@ -36,7 +38,9 @@ export default class Painting extends Component {
         <TopNav title="PAINTINGS" />
         <SubNav />
 
-        {/* <span>PAINTINGS</span> */}
+
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
 
 
 <div className="container">

@@ -4,6 +4,9 @@ import * as UTILS from "../utils";
 import SubNav from "./SubNav";
 import "../css/addartwork.css"
 
+// Page set up by Harsh
+
+
 export default class CategorySelector extends Component {
   constructor(props) {
     super(props);

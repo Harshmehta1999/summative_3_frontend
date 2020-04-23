@@ -3,6 +3,11 @@ import { navigate } from "@reach/router";
 import "../css/login_signup.css";
 import Logo from "../images/logo.png";
 
+
+
+// Page set up by Harsh
+// All data showing and events done by Harsh
+
 const initialState = {
   User: "",
   Email: "",
@@ -112,6 +117,12 @@ export default class SignupPage extends Component {
   goBack = e => {
     navigate(`/loginpage`);
   };
+
+
+// /* Data put in by Harsh */
+// /* CSS, divs/containers done by Demi */
+
+  
 
   render() {
     return (

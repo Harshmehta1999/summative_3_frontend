@@ -7,6 +7,11 @@ import TopNav from "./TopNav";
 import SubNav from "./SubNav";
 import "../css/image.css";
 
+
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
+
+
 export default class EditArtwork extends Component {
   constructor(props) {
     super(props);

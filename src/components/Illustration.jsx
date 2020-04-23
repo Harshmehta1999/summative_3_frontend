@@ -6,6 +6,9 @@ import IllustrationButton from "../buttons/IllustrationButton.jsx";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
 
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
+
 export default class Illustration extends Component {
   constructor(props) {
     super(props);

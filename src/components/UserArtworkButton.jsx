@@ -3,6 +3,10 @@ import React, { Component } from "react";
 import { navigate } from "@reach/router";
 import "../css/categories.css"
 
+// Page set up by Harsh
+// Data being called from server and events done by Harsh
+
+
 export default class UserArtworkButton extends Component {
   constructor(props) {
     super(props);

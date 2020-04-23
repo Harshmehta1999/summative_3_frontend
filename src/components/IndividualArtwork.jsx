@@ -10,6 +10,10 @@ import * as UTILS from "../utils";
 // import CommentButton from "./CommentButton";
 import AddToCartButton from "./AddToCartButton";
 
+
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
+
 export default class IndividualArtwork extends Component {
   constructor(props) {
     super(props);

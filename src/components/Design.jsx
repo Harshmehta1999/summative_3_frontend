@@ -8,7 +8,8 @@ import TopNav from "./TopNav";
 import "../css/categories.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-import Image from "../images/artist.jpg";
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
 
 export default class Design extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ export default class Design extends Component {
       <React.Fragment>
         <TopNav title="DESIGN" />
         <SubNav />
-        {/* <span>DESIGNS</span> */}
+
 
         <div className="container">
           {this.state.design.map((design, i) => {

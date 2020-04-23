@@ -6,7 +6,8 @@ import TopNav from "./TopNav";
 import SubNav from "./SubNav";
 import "../css/categories.css";
 
-// import Heart from "../images/heart.png"
+// Page set up by Harsh
+// Data being called from server and events done by Harsh
 
 export default class Photography extends Component {
   constructor(props) {
@@ -32,7 +33,8 @@ export default class Photography extends Component {
         <TopNav title="PHOTOGRAPHY" />
         <SubNav />
 
-        {/* <span>PHOTOGRAPHY</span> */}
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
 
         <div className="container">
           {this.state.photography.map((photography, i) => {

@@ -8,6 +8,9 @@ import SubNav from "./SubNav";
 import "../css/categories.css";
 import "bootstrap/dist/css/bootstrap.css";
 
+// Page set up by Harsh
+// Data being called from server and events done by Harsh
+
 export default class UserArtwoks extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +41,10 @@ export default class UserArtwoks extends Component {
         <SubNav />
         <TopNav title={this.state.user}/>
 
-        {/* <span className="user-name">{this.state.user}</span> */}
+
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards display done by Demi */}
+
 
         <div className="container">
         {this.state.artworks.map((artworks, i) => {

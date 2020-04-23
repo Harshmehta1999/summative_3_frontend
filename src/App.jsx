@@ -15,7 +15,6 @@ import SubNav from "./components/SubNav";
 import Menu from "./components/Menu";
 import TopNav from "./components/TopNav";
 import Account from "./components/Account";
-import LandingPage from "./components/LandingPage";
 import Search from "./components/Search";
 import LoginSignup from "./components/LoginSignup";
 import SignupPage from "./components/SignupPage";
@@ -55,7 +54,6 @@ export default class App extends React.Component {
           <UserArtworkInfo path="/UserArtworkInfo/:id" />
           <EditArtwork path="/edit-details/:id" />
 
-          <LandingPage path="/creativecorner" />
           <TopNav path="/header" />
         </Router>
       </React.Fragment>

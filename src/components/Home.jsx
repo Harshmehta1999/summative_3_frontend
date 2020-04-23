@@ -1,13 +1,11 @@
 import * as React from "react";
 import "../App.css";
-
-// import { navigate } from "@reach/router";
 import * as UTILS from "../utils";
 import Axios from "axios";
-
-import TopNav from "./TopNav"
-import SubNav from "./SubNav"
 import LoginSignup from "../components/LoginSignup"
+
+
+// Page set up by Harsh
 
 export default class Home extends React.Component {
   constructor(props) {

@@ -3,6 +3,9 @@ import { navigate } from "@reach/router";
 import "../css/login_signup.css";
 import Logo from "../images/logo.png"
 
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
+
 export default class LoginSignup extends Component {
   loginpage = e => {
     navigate(`/menu`);
@@ -17,6 +20,7 @@ export default class LoginSignup extends Component {
     return (
     <div className="back-ground">  
       <div className="homepage">
+        
       <img src={Logo} className="header" />  
         </div>
         <div className="button-login">

@@ -4,6 +4,8 @@ import search from "../images/search-bar.png";
 import leftArrow from "../images/left_arrow.png";
 import "../css/topnav.css";
 
+// Page set up by Demi
+
 export default class TopNav extends Component {
   componentDidMount() {}
 
@@ -33,12 +35,6 @@ export default class TopNav extends Component {
           />
 
           <div className="search-wrapper">
-            {/* <img
-              src={search}
-              onClick={this.goSearch}
-              alt="search-bar"
-              className="search-bar"
-            /> */}
           </div>
         </div>
       </React.Fragment>

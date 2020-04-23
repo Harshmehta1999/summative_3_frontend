@@ -6,6 +6,8 @@ import SubNav from "./SubNav";
 import TopNav from "./TopNav";
 import "../css/individualartwork.css"
 
+// Data being called from server and events done by Harsh
+
 export default class UserArtworkInfo extends Component {
   constructor(props) {
     super(props);
@@ -47,6 +49,10 @@ export default class UserArtworkInfo extends Component {
           {this.state.artworks.map((artwork, i) => {
             return (
               <React.Fragment key={i}>
+
+
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers done by Demi */}
 
 
 <div className="info-container">

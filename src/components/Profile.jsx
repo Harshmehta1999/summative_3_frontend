@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import { navigate } from "@reach/router";
 import "../css/edituserprofile.css";
 
+
+// Page set up by Harsh
+// Data being called from server and events done by Harsh
+
+
 export default class Profile extends Component {
   constructor() {
     super();
@@ -25,6 +30,10 @@ export default class Profile extends Component {
   render() {
     return (
       <React.Fragment>
+
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers done by Demi */}
+
         <div>
             <div className="info">
               <p>{this.state.user}</p>

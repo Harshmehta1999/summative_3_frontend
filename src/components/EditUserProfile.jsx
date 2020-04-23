@@ -4,6 +4,9 @@ import "../css/edituserprofile.css";
 import SubNav from "./SubNav";
 import TopNav from "./TopNav";
 
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
+
 export default class EditUserProfile extends Component {
   constructor(props) {
     super(props);
@@ -63,7 +66,6 @@ export default class EditUserProfile extends Component {
           <TopNav title="EDIT PROFILE" />
           <SubNav />
         <div className="edit-profile">
-          {/* <span>EDIT PROFILE</span> */}
 
           <form className="edit-form" onSubmit={this.onSubmit}>
          

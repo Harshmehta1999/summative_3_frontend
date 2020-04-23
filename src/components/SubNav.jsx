@@ -7,6 +7,9 @@ import account from "../images/account.png";
 import { navigate } from "@reach/router";
 import "../css/subnav.css";
 
+
+// Page set up by Demi
+
 export default class SubNav extends Component {
   goSearch = e => {
     navigate(`/search`);

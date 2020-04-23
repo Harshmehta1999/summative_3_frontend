@@ -7,6 +7,10 @@ import "../css/edituserprofile.css"
 import Profile from "./Profile"
 import UserArtworkButton from "./UserArtworkButton";
 
+
+{/* Data put in by Harsh */}
+{/* CSS, divs/containers, cards done by Demi */}
+
 export default class Account extends Component {
   componentDidMount() {}
 
