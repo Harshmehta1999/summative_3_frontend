@@ -54,10 +54,9 @@ export default class IndividualArtwork extends Component {
   render() {
     return (
       <React.Fragment>
-        <TopNav title={this.state.user}/>
+        <TopNav />
         <SubNav />
-{/* 
-        <span className="user-name">{this.state.user}</span> */}
+
 
         <div>
           <div className="artist-page">
@@ -69,7 +68,6 @@ export default class IndividualArtwork extends Component {
                     <img
                       src={`http://localhost:9000/${artwork.image}`}
                       alt="img"
-                      // onClick={this.productDisplay}
                     />
                   </div>
                   <div className="artist-info">

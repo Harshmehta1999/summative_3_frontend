@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-// import { navigate } from "@reach/router";
-import IllustrationButton from "../buttons/IllustrationButton.jsx";
+import { navigate } from "@reach/router";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
 
@@ -16,10 +15,10 @@ export default class Illustration extends Component {
     this.state = { illustration: [] };
   }
 
-  // getDesignInfo = e => {
-  //   navigate(`/IndividualArtwork/${this.props.id}`)
+  getIllustrationInfo = e => {
+    navigate(`/IndividualArtwork/${this.state.illustration[0].id}`)
 
-  // };
+  };
 
   componentDidMount() {
     Axios.get(UTILS.category_illustration_url).then((res) => {
@@ -38,7 +37,6 @@ export default class Illustration extends Component {
         <TopNav title="ILLUSTRATION" />
         <SubNav />
 
-        {/* <span>ILLUSTRATION</span> */}
 
         <div className="container">
           {this.state.illustration.map((illustration, i) => {
@@ -49,14 +47,14 @@ export default class Illustration extends Component {
                     src={`http://localhost:9000/${illustration.image}`}
                     class="card-img-top"
                     alt="product-image"
+                    onClick={this.getIllustrationInfo}
                   />
                 </div>
                 <div className="card-body">
-                  <IllustrationButton
-                    className="card-title"
-                    illustration_title={illustration.artwork_title}
-                    id={illustration.id}
-                  />
+                  <span
+                    className="card-title">
+                    {illustration.artwork_title}
+                  </span>
                   <h6 className="card-subtitle">
                     {illustration.artwork_subtitle}
                   </h6>

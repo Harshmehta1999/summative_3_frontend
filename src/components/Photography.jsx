@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-import PhotographyButton from "../buttons/PhotographyButton";
+import { navigate } from "@reach/router"
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
 import "../css/categories.css";
+import { realpathSync } from "fs";
 
 // Page set up by Harsh
 // Data being called from server and events done by Harsh
@@ -15,6 +16,12 @@ export default class Photography extends Component {
 
     this.state = { photography: [] };
   }
+
+
+  getPhotographyInfo = e => {
+    navigate(`/IndividualArtwork/${this.state.photography[0].id}`)
+
+  };
 
   componentDidMount() {
     Axios.get(UTILS.category_photography_url).then(res => {
@@ -45,14 +52,15 @@ export default class Photography extends Component {
                     src={`http://localhost:9000/${photography.image}`}
                     class="card-img-top"
                     alt="product"
+                    onClick={this.getPhotographyInfo}
                   />
                 </div>
                 <div className="card-body">
-                  <PhotographyButton
-                    className="card-title"
-                    photography_title={photography.artwork_title}
-                    id={photography.id}
-                  />
+                  <span
+                    className="card-title">
+                   {photography.artwork_title}
+                 </span>
+              
                   <h6 className="card-subtitle">
                     {photography.artwork_subtitle}
                   </h6>

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-// import { navigate } from "@reach/router";
-import PaintingButton from "../buttons/PaintingButton";
+import { navigate } from "@reach/router";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
 
@@ -16,10 +15,10 @@ export default class Painting extends Component {
     this.state = { painting: [] };
   }
 
-  // getDesignInfo = e => {
-  //   navigate(`/IndividualArtwork/${this.props.id}`)
+  getPaintingInfo = e => {
+    navigate(`/IndividualArtwork/${this.state.painting[0].id}`)
 
-  // };
+  };
 
   componentDidMount() {
     Axios.get(UTILS.category_painting_url).then(res => {
@@ -50,10 +49,10 @@ export default class Painting extends Component {
              
                      <div className="card">
                                               <div className="card-img-top-box wrap">
-                       <img src={`http://localhost:9000/${painting.image}`} class="card-img-top" />
+                       <img src={`http://localhost:9000/${painting.image}`} class="card-img-top" onClick={this.getPaintingInfo}/>
                        </div>
                        <div className="card-body">
-                       <PaintingButton className="card-title" painting_title={painting.artwork_title} id={painting.id} />
+                       <span className="card-title">{painting.artwork_title}</span>
                          <h6 className="card-subtitle">{painting.artwork_subtitle}</h6>
                          <p className="card-price">${painting.price}</p>
    

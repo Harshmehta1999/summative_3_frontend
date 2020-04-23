@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-// import { navigate } from "@reach/router";
-import DesignButton from "../buttons/DesignButton";
+import { navigate } from "@reach/router";
 import SubNav from "./SubNav";
 import TopNav from "./TopNav";
 import "../css/categories.css";
@@ -18,10 +17,9 @@ export default class Design extends Component {
     this.state = { design: [] };
   }
 
-  // getDesignInfo = e => {
-  //   navigate(`/IndividualArtwork/${this.props.id}`)
-
-  // };
+  getDesignInfo = e => {
+    navigate(`/IndividualArtwork/${this.state.design[0].id}`)
+  };
 
   componentDidMount() {
     Axios.get(UTILS.category_design_url).then(res => {
@@ -49,14 +47,13 @@ export default class Design extends Component {
                   <img
                     src={`http://localhost:9000/${design.image}`}
                     className="card-img-top"
+                    onClick={this.getDesignInfo}
                   />
                 </div>
                 <div className="card-body">
-                  <DesignButton
-                    className="card-title"
-                    design_title={design.artwork_title}
-                    id={design.id}
-                  />
+                  <span className="card-title">{design.artwork_title}</span>
+
+
                   <h6 className="card-subtitle">{design.artwork_subtitle}</h6>
                   <p className="card-price">${design.price}</p>
                 </div>

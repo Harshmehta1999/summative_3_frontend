@@ -25,7 +25,7 @@ export default class Account extends Component {
   render() {
     return (
       <React.Fragment>
-        <TopNav />
+        <TopNav title="ACCOUNT"/>
         <SubNav />
 
         <Profile />
@@ -51,8 +51,6 @@ export default class Account extends Component {
 
       </div>
 
-
-        <span>ACCOUNT</span>
       </React.Fragment>
     );
   }

@@ -35,7 +35,7 @@
     flex-flow: wrap;
 }
 
-.card-subtitle, .card-price, .card-title {
+.card-subtitle, .card-price {
     font-family: Arial, Helvetica, sans-serif;
     text-align: inherit;
     letter-spacing: 0.02rem;
@@ -48,7 +48,8 @@
 }
 
 .card-title {
-    color: #555555;
+    color: black;
+
 }
 
 
@@ -62,4 +63,5 @@
 .favourites {
     width: 40vw;
 }
+
 

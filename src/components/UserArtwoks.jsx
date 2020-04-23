@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
-// import { navigate } from "@reach/router";
+import { navigate } from "@reach/router";
 import UserArtworkButton from "./UserArtworkButton";
 import TopNav from "./TopNav";
 import SubNav from "./SubNav";
@@ -23,6 +23,11 @@ export default class UserArtwoks extends Component {
   }
 
   
+
+  getProductInfo = e => {
+    navigate(`/IndividualArtwork/${this.state.artworks[0].id}`)
+
+  };
 
   componentDidMount() {
     Axios.get(UTILS.artworks_url).then(res => {
@@ -54,14 +59,14 @@ export default class UserArtwoks extends Component {
                 <img
                   src={`http://localhost:9000/${artworks.image}`}
                   className="card-img-top"
+                  onClick={this.getProductInfo}
                 />
               </div>
               <div className="card-body">
-             <UserArtworkButton
-                  className="card-title"
-                  artwork_title={artworks.artwork_title}
-                  id={artworks.id}
-     /> 
+             <span
+                  className="card-title">
+                  {artworks.artwork_title}</span>
+      
                <h6 className="card-subtitle">{artworks.artwork_subtitle}</h6>
                 <p className="card-price">${artworks.price}</p>
               </div>
