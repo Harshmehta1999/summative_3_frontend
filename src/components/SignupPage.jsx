@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { navigate } from "@reach/router";
 import "../css/login_signup.css";
+import Logo from "../images/logo.png";
 
 const initialState = {
   User: "",
@@ -117,8 +118,10 @@ export default class SignupPage extends Component {
       <React.Fragment>
         <div className="back-ground">
         <div className="signup-info">
-          <div className="header">THE CREATIVE CORNER</div>
 
+          <div className="logo">
+          <img src={Logo} className="header" />
+</div>
           <form onSubmit={this.onSubmit}>
             <input
               type="text"

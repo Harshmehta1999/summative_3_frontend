@@ -5,6 +5,17 @@
 .homepage {
     margin-top: 65%;
     margin-bottom: 41.5%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+width: 60%;
 }
 
 .button-login {
@@ -31,15 +42,7 @@
 
 }
 
-.header {
-    letter-spacing: 0.1rem;
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 1.5rem;
-    color: grey;
-    text-align: center;
-    
 
-}
 
 .signup-info {
 margin-top: 40%;
