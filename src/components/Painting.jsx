@@ -15,9 +15,8 @@ export default class Painting extends Component {
     this.state = { painting: [] };
   }
 
-  getPaintingInfo = e => {
-    navigate(`/IndividualArtwork/${this.state.painting[0].id}`)
-
+  getPaintingInfo = (id) => {
+    navigate(`/IndividualArtwork/${id}`);
   };
 
   componentDidMount() {
@@ -37,31 +36,31 @@ export default class Painting extends Component {
         <TopNav title="PAINTINGS" />
         <SubNav />
 
+        {/* Data put in by Harsh */}
+        {/* CSS, divs/containers, cards done by Demi */}
 
-{/* Data put in by Harsh */}
-{/* CSS, divs/containers, cards done by Demi */}
-
-
-<div className="container">
-            {this.state.painting.map((painting, i) => {
-                 return (
-               
-             
-                     <div className="card">
-                                              <div className="card-img-top-box wrap">
-                       <img src={`http://localhost:9000/${painting.image}`} class="card-img-top" onClick={this.getPaintingInfo}/>
-                       </div>
-                       <div className="card-body">
-                       <span className="card-title">{painting.artwork_title}</span>
-                         <h6 className="card-subtitle">{painting.artwork_subtitle}</h6>
-                         <p className="card-price">${painting.price}</p>
-   
-                         </div>
-                     </div>
-                  
-                 );
-               })}
-               </div>
+        <div className="container">
+          {this.state.painting.map((painting, i) => {
+            return (
+              <div className="card">
+                <div className="card-img-top-box wrap">
+                  <img
+                    src={`http://localhost:9000/${painting.image}`}
+                    class="card-img-top"
+                    onClick={() => {
+                      this.getPaintingInfo(painting.id);
+                    }}
+                  />
+                </div>
+                <div className="card-body">
+                  <span className="card-title">{painting.artwork_title}</span>
+                  <h6 className="card-subtitle">{painting.artwork_subtitle}</h6>
+                  <p className="card-price">${painting.price}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </React.Fragment>
     );
   }

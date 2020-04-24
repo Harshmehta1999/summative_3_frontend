@@ -24,9 +24,8 @@ export default class UserArtwoks extends Component {
 
   
 
-  getProductInfo = e => {
-    navigate(`/IndividualArtwork/${this.state.artworks[0].id}`)
-
+  getProductInfo = (id) => {
+    navigate(`/IndividualArtwork/${id}`);
   };
 
   componentDidMount() {
@@ -59,8 +58,10 @@ export default class UserArtwoks extends Component {
                 <img
                   src={`http://localhost:9000/${artworks.image}`}
                   className="card-img-top"
-                  onClick={this.getProductInfo}
-                />
+                  onClick={() => {
+                    this.getProductInfo(artworks.id);
+                  }}
+                  />
               </div>
               <div className="card-body">
              <span

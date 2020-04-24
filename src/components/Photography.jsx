@@ -18,9 +18,8 @@ export default class Photography extends Component {
   }
 
 
-  getPhotographyInfo = e => {
-    navigate(`/IndividualArtwork/${this.state.photography[0].id}`)
-
+  getPhotographyInfo = (id) => {
+    navigate(`/IndividualArtwork/${id}`);
   };
 
   componentDidMount() {
@@ -52,7 +51,9 @@ export default class Photography extends Component {
                     src={`http://localhost:9000/${photography.image}`}
                     class="card-img-top"
                     alt="product"
-                    onClick={this.getPhotographyInfo}
+                    onClick={() => {
+                      this.getPhotographyInfo(photography.id);
+                    }}
                   />
                 </div>
                 <div className="card-body">
