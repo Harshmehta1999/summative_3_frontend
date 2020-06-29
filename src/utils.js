@@ -1,4 +1,4 @@
-const api_url = "http://localhost:9000/api";
+const api_url = "https://household-app-nz.herokuapp.com/api/";
 const designers_url = api_url + "/designers";
 const categories_url = api_url + "/categories";
 const artworks_url = api_url + "/artworks";
